@@ -1,2 +1,6 @@
 M. Egi ganteng
+<<<<<<< HEAD
 Dylan Asssuuuuuuuuu
+=======
+Rizky Alim Nurhuda
+>>>>>>> dc3496590edc9037009fa01643fb9e02bd19a3e4
