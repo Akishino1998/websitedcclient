@@ -5,10 +5,13 @@
 	<title></title>
 </head>
 <body>
-		<nav>
-			<a href="Menu 1">Menu 1</a>
-			<a href="Menu 2">Menu 2</a>
-			<a href="Menu 3">Menu 3</a>
-		</nav>
+	<div id="header">
+		<h1>Doctor Computer</h1>
+		<header>
+			<ul id="menu1">
+				<li><a href="facebook.com/ekopujianto1998" class="menu2">DC</a></li>
+			</ul>
+		</header>
+	</div>
 </body>
 </html>

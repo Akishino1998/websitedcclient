@@ -1,15 +1,24 @@
-
-*
-{
+*{
 	padding: 0px;
 	margin: 0px;
 }
-
-.nav
-{
+#header{
+	background-color: blue;
+	width: 100%;
+	height: 50px;
+}
+.menu2{
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	text-decoration: none;
+	color: white;
+	font-size: 30px;
 	float: right;
-	list-style: none;
-	margin-top: 30px;
-	position: relative;
-	background-color: black;
+	position: none;
+	right: 90px;
+	
+}
+header{
+	float: right;
 }
