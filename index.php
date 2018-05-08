@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="modif.css">
+<link rel="stylesheet" type="text/css" href="css/modif.css">
 <head>
 	<title></title>
 </head>
