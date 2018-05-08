@@ -9,7 +9,8 @@
 		<h1>Doctor Computer</h1>
 		<header>
 			<ul id="menu1">
-				<li><a href="facebook.com/ekopujianto1998" class="menu2">DC</a></li>
+				<li><a href="" class="menu2">DC</a></li>
+				<li><a href="">"Menu3"</a>NGENTOD	</li>
 			</ul>
 		</header>
 	</div>
