@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/main2.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -32,19 +32,26 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Register
+						Register Member
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: drcomputer@example.com">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input" data-validate = "Username Harus Diisi ">
+						<input class="input100" type="text" name="email" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi">
 						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi">
+						<input class="input100" type="password" name="pass" placeholder="Re-Type Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -59,10 +66,10 @@
 
 					<div class="text-center p-t-12">
 						<span class="txt1">
-							Belum Punya Akun?
+							Sudah Punya Akun?
 						</span>
 						<a class="txt2" href="#">
-							Klik Disini
+							Login Disini!
 						</a>
 					</div>
 
@@ -91,6 +98,9 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+		
+	</script>
 
 </body>
 </html>
