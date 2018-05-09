@@ -68,7 +68,7 @@
 						<span class="txt1">
 							Sudah Punya Akun?
 						</span>
-						<a class="txt2" href="#">
+						<a class="txt2" href="form-login.php">
 							Login Disini!
 						</a>
 					</div>
