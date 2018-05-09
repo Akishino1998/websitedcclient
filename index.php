@@ -11,7 +11,11 @@
 </head>
 <body>
 	<?php include("layout/header.php") ?>
-	<h1>sss</h1>
+	
+	<img src="img/img1.jpg" class="materialboxed">
+
+
+
 	<script src="js/materialize.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
