@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="login.css">
 <head>
 	<title></title>
 </head>
@@ -10,6 +11,8 @@
 	<center>
 		<table>
 			<form method="POST" action=""> 
+				<div class="container">
+
 				<tr>
 					<td>USERNAME</td>
 					<td>:</td>
@@ -17,15 +20,18 @@
 				</tr><br>
 
 				<tr>
-					<td>Password</td>
+					<td>PASSWORD</td>
 					<td>:</td>
 					<td><input type="password" name="password"></td>
 				</tr><br>
+
 
 				<tr>
 					<td><input type="submit" name="submit" value="LOGIN"></td>
 				</tr>
 
+				<h4>Belum Punya Akun? Silahkan Klik Disini</h4>
+				</div>
 
 
 			</form>
