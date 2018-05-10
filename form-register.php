@@ -39,7 +39,7 @@
 						<input class="input100" type="text" name="email" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="far fa-user" aria-hidden="true"></i><!-- ganti gambarnya -->
 						</span>
 					</div>
 

@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Register
+						Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: drcomputer@example.com">
@@ -61,7 +61,7 @@
 						<span class="txt1">
 							Belum Punya Akun?
 						</span>
-						<a class="txt2" href="#">
+						<a class="txt2" href="form-register.php">
 							Klik Disini
 						</a>
 					</div>
