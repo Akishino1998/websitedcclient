@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 03:13 PM
+-- Generation Time: May 13, 2018 at 08:56 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -151,7 +151,10 @@ INSERT INTO `daftar_harga_service` (`id_Service`, `Nama_Service`, `Harga_Service
 
 CREATE TABLE `daftar_pelanggan` (
   `id_Pelanggan` varchar(10) NOT NULL,
-  `Nama` varchar(30) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `Nama_Depan` varchar(30) DEFAULT NULL,
+  `Nama_Belakang` varchar(30) DEFAULT NULL,
+  `kode_pos` int(11) DEFAULT NULL,
   `Alamat` text,
   `NO_HP` varchar(14) DEFAULT NULL,
   `Email` varchar(20) DEFAULT NULL
@@ -161,10 +164,10 @@ CREATE TABLE `daftar_pelanggan` (
 -- Dumping data for table `daftar_pelanggan`
 --
 
-INSERT INTO `daftar_pelanggan` (`id_Pelanggan`, `Nama`, `Alamat`, `NO_HP`, `Email`) VALUES
-('0', 'Unknow', 'Unknow', 'Unknow', 'Unknow'),
-('0001', 'Eko', 'Suryanata', '085828949395', 'ekopujianto48@gmail.'),
-('0002', 'Indah', 'Hatiku', '085787127035', 'indah@gmail.com');
+INSERT INTO `daftar_pelanggan` (`id_Pelanggan`, `username`, `Nama_Depan`, `Nama_Belakang`, `kode_pos`, `Alamat`, `NO_HP`, `Email`) VALUES
+('0', NULL, 'Unknow', NULL, NULL, 'Unknow', 'Unknow', 'Unknow'),
+('0001', NULL, 'Eko', NULL, NULL, 'Suryanata', '085828949395', 'ekopujianto48@gmail.'),
+('0002', NULL, 'Indah', NULL, NULL, 'Hatiku', '085787127035', 'indah@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -839,6 +842,17 @@ INSERT INTO `status_pengembalian_pc` (`id_penerimaan`, `id_Pelanggan`, `Tgl_Teri
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_pelanggan`
+--
+
+CREATE TABLE `user_pelanggan` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `keuntungan_penjualan`
 --
 DROP TABLE IF EXISTS `keuntungan_penjualan`;
@@ -885,7 +899,8 @@ ALTER TABLE `daftar_harga_service`
 -- Indexes for table `daftar_pelanggan`
 --
 ALTER TABLE `daftar_pelanggan`
-  ADD PRIMARY KEY (`id_Pelanggan`);
+  ADD PRIMARY KEY (`id_Pelanggan`),
+  ADD KEY `FK_daftar_pelanggan_user_pelanggan` (`username`);
 
 --
 -- Indexes for table `daftar_penerimaan_pc`
@@ -1038,6 +1053,12 @@ ALTER TABLE `status_pengembalian_pc`
   ADD KEY `FK_status_pengembalian_pc_daftar_pelanggan` (`id_Pelanggan`);
 
 --
+-- Indexes for table `user_pelanggan`
+--
+ALTER TABLE `user_pelanggan`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1086,6 +1107,12 @@ ALTER TABLE `akun`
 --
 ALTER TABLE `barang`
   ADD CONSTRAINT `FK_barang_kategori_barang` FOREIGN KEY (`id_Kategori`) REFERENCES `kategori_barang` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `daftar_pelanggan`
+--
+ALTER TABLE `daftar_pelanggan`
+  ADD CONSTRAINT `FK_daftar_pelanggan_user_pelanggan` FOREIGN KEY (`username`) REFERENCES `user_pelanggan` (`username`);
 
 --
 -- Constraints for table `daftar_penerimaan_pc`
