@@ -2,6 +2,6 @@
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'doctor_computer';
+$db = 'dc';
 $conn = mysqli_connect($server, $user, $pass, $db);
 ?>
