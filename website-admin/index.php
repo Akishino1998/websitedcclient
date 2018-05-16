@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | Doctor Computer</title>
+    <title>Free Bootstrap Admin Template</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME ICONS STYLES-->
@@ -27,14 +27,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a  class="navbar-brand" href="index.html">Doctor Computer
+                <a  class="navbar-brand" href="index.html">DesignBootstrap 
 
                 </a>
             </div>
 
             <div class="notifications-wrapper">
 <ul class="nav">
-
+               
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -111,21 +111,21 @@
                                 </li>
                             </ul>
                 </li>
-
+              
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user-plus"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user-plus"></i> Profile</a>
+                        <li><a href="#"><i class="fa fa-user-plus"></i> My Profile</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out"></i> Keluar</a>
+                        <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
             </ul>
-
+               
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -136,12 +136,12 @@
                         <div class="user-img-div">
                             <img src="assets/img/user.jpg" class="img-circle" />
 
-
+                           
                         </div>
 
                     </li>
                      <li>
-                        <a  href="#"> <strong> Who Am I </strong></a>
+                        <a  href="#"> <strong> Romelia Alexendra </strong></a>
                     </li>
 
                     <li>
@@ -149,19 +149,19 @@
                     </li>
                     <li>
                         <a href="ui.html"><i class="fa fa-venus "></i>UI Elements </a>
-
+                        
                     </li>
-
+                    
                     <li>
                         <a href="table.html"><i class="fa fa-bolt "></i>Data Tables </a>
-
+                        
                     </li>
-
-
+                   
+                     
                      <li>
                         <a href="forms.html"><i class="fa fa-code "></i>Forms</a>
                     </li>
-
+                   
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Multilevel Link <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
@@ -189,7 +189,7 @@
                     <li>
                         <a href="blank.html"><i class="fa fa-dashcube "></i>Blank Page</a>
                     </li>
-
+                   
                 </ul>
             </div>
 
@@ -241,7 +241,7 @@
                                 <h5>Some Sample Text</h5>
                             </a>
                         </div>
-                        </div>
+                        </div>      
             </div>
                  <div class="row">
                     <div class="col-md-12">
@@ -259,7 +259,6 @@
                                         <th>#</th>
                                         <th>First Name</th>
                                         <th>Username</th>
-                                        <th>Password</th>
                                         <th>User No.</th>
                                     </tr>
                                 </thead>
@@ -282,7 +281,7 @@
                                         <td>@fat</td>
                                         <td>100090</td>
                                     </tr>
-
+                                   
                                     <tr>
                                         <td>4</td>
                                         <td><span class="label label-primary">the Bird</span></td>
@@ -295,7 +294,7 @@
                                         <td>@fat</td>
                                         <td><span class="label label-danger">100090</span></td>
                                     </tr>
-
+                                    
                                     <tr>
                                         <td>6</td>
                                         <td>Otto</td>
@@ -328,8 +327,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </div>
 
                         </div>
-
-
+              
+             
               <div class=" col-md-8 col-sm-8">
                   <div class="list-group">
                             <a href="#" class="list-group-item active">
@@ -352,7 +351,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </a>
       <div class="media-body">
         <h4 class="media-heading">Media heading </h4>
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
       </div>
     </div>
     <div class="media">
@@ -361,20 +360,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </a>
       <div class="media-body">
         <h4 class="media-heading">Media heading</h4>
-       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
         <div class="media">
           <a class="media-left" href="#">
               <img src="assets/img/1.jpg" alt="" class="img-rounded" />
           </a>
           <div class="media-body">
             <h4 class="media-heading">Nested media heading</h4>
-           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
           </div>
         </div>
       </div>
     </div>
-
-
+    
+          
             </div>
             </div>
             <!-- /. PAGE INNER  -->
@@ -384,7 +383,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </div>
     <!-- /. WRAPPER  -->
     <footer >
-        &copy; 2018 Doctor Computer | By : <a href="http://www.designbootstrap.com/" target="_blank">Doctor Computer</a>
+        &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
     </footer>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
