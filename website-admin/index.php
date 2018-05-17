@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template</title>
+    <title>Dasboard | Doctor Computer</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/startmin.css" rel="stylesheet">
     <!-- FONTAWESOME ICONS STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- <link href="assets/css/font-awesome.css" rel="stylesheet" /> -->
+    <link href="assets\css\font-awesome\css\fontawesome-all.css" rel="stylesheet" />
     <!--CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
       <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -17,11 +19,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-    <div id="wrapper">
-        <?php include('assets/layout/header.php'); ?>
+<body >
+    <div id="wrapper" >
+        <?php 
+        include('assets/layout/header.php'); 
+
+        ?>
         <!-- /. SIDEBAR MENU (navbar-side) -->
-        <div id="page-wrapper" class="page-wrapper-cls">
+        <div id="page-wrapper" class="page-wrapper-cls" style="margin-left: 180px;">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
@@ -31,45 +36,104 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-info">
-                            This is a free admin dashboard temple for personal and commercial use. Use this template for your projecs and save you money and time. Hope you will like it.
+                            Jika Ada Notif, Tolong Hubungi Teman Yang Bersangkutan!
                         </div>
                     </div>
                 </div>
                 <div class="row">
-            <div class=" col-md-3 col-sm-3">
-                <div class="style-box-one Style-one-clr-one">
+                    <div class="col-lg-3 col-md-6" >
+                        <div class="panel panel-primary" >
+                            <div class="panel-heading" >
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-truck fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" style="font-size: 40px;">26</div>
+                                        <div style="margin-top: 15px; font-size: 20px;">Delivery Jasa</div>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="#">
-                                <span class="glyphicon glyphicon-headphones"></span>
-                                 <h5>Some Sample Text</h5>
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat Disini!</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
                             </a>
                         </div>
-                        </div>
-              <div class=" col-md-3 col-sm-3">
-                <div class="style-box-one Style-one-clr-two">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fas fa-dolly-flatbed fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" style="font-size: 40px;">26</div>
+                                        <div style="margin-top: 15px; font-size: 20px;">Order Barang</div>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="#">
-                                <span class="glyphicon glyphicon-repeat"></span>
-                                 <h5>Some Sample Text</h5>
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat Disini!</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                                    <div class="clearfix"></div>
+                                </div>
                             </a>
                         </div>
-                        </div>
-             <div class=" col-md-3 col-sm-3">
-                <div class="style-box-one Style-one-clr-three">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" style="font-size: 40px;">26</div>
+                                        <div style="margin-top: 15px; font-size: 20px;">Penerimaan PC</div>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="#">
-                                <span class="glyphicon glyphicon-camera"></span>
-                                 <h5>Some Sample Text</h5>
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat Disini!</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                                    <div class="clearfix"></div>
+                                </div>
                             </a>
                         </div>
-                        </div>
-              <div class=" col-md-3 col-sm-3">
-                <div class="style-box-one Style-one-clr-four">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" style="font-size: 40px;">26</div>
+                                        <div style="margin-top: 15px; font-size: 20px;">Penerimaan PC</div>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="#">
-                                <span class="glyphicon glyphicon-cog"></span>
-                                <h5>Some Sample Text</h5>
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat Disini!</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                                    <div class="clearfix"></div>
+                                </div>
                             </a>
                         </div>
-                        </div>      
-            </div>
-                 <div class="row">
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger">
                             This is a free admin dashboard temple for personal and commercial use. Use this template for your projecs and save you money and time. Hope you will like it.
@@ -77,8 +141,8 @@
                     </div>
                 </div>
                 <div class="row">
-            <div class=" col-md-4 col-sm-4">
-                <div class="table-responsive">
+                    <div class=" col-md-4 col-sm-4">
+                        <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>

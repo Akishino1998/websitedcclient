@@ -6,9 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a  class="navbar-brand" href="index.php">DesignBootstrap 
-
-                </a>
+                <a  class="navbar-brand" href="index.php">Doctor Computer</a>
             </div>
 
             <div class="notifications-wrapper">
@@ -119,17 +117,17 @@
 
                     </li>
                      <li>
-                        <a  href="#"> <strong> Romelia Alexendra </strong></a>
+                        <a  href="#"> <strong> Who Am I </strong></a>
                     </li>
 
                     <li>
-                        <a class="active-menu"  href="index.php"><i class="fa fa-dashboard "></i>Dashboard</a>
+                        <a class="active-menu"  href="index.php"><i class="fa fa-tachometer-alt  "></i>Dashboard</a>
                     </li>
                     <li>
                         <a href="ui.php"><i class="fa fa-venus "></i>UI Elements </a>
                         
                     </li>
-                    
+                        
                     <li>
                         <a href="table.php"><i class="fa fa-bolt "></i>Data Tables </a>
                         
