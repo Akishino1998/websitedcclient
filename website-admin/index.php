@@ -23,6 +23,8 @@
     <div id="wrapper" >
         <?php 
         include('assets/layout/header.php'); 
+        include('SQL/query.php');
+        $query = new query();
 
         ?>
         <!-- /. SIDEBAR MENU (navbar-side) -->
@@ -49,7 +51,7 @@
                                         <i class="fa fa-truck fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge" style="font-size: 40px;">26</div>
+                                        <div class="huge" style="font-size: 40px;"><?php $query->getSumArrow('delivery_jasa'); ?></div>
                                         <div style="margin-top: 15px; font-size: 20px;">Delivery Jasa</div>
                                     </div>
                                 </div>
@@ -71,7 +73,7 @@
                                         <i class="fas fa-dolly-flatbed fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge" style="font-size: 40px;">26</div>
+                                        <div class="huge" style="font-size: 40px;"><?php $query->getSumArrow('pemesanan_barang'); ?></div>
                                         <div style="margin-top: 15px; font-size: 20px;">Order Barang</div>
                                     </div>
                                 </div>
@@ -91,11 +93,11 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
+                                        <i class="fa fa-laptop fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge" style="font-size: 40px;">26</div>
-                                        <div style="margin-top: 15px; font-size: 20px;">Penerimaan PC</div>
+                                        <div class="huge" style="font-size: 40px;"><?php $query->getSumArrow('daftar_penerimaan_pc'); ?></div>
+                                        <div style="margin-top: 15px; font-size: 18px;">Penerimaan PC</div>
                                     </div>
                                 </div>
                             </div>
@@ -114,11 +116,11 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
+                                        <i class="fa fa-hand-holding-usd  fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge" style="font-size: 40px;">26</div>
-                                        <div style="margin-top: 15px; font-size: 20px;">Penerimaan PC</div>
+                                        <div class="huge" style="font-size: 40px;">0</div>
+                                        <div style="margin-top: 15px; font-size: 15px;">Pemasukan Hari Ini!</div>
                                     </div>
                                 </div>
                             </div>
