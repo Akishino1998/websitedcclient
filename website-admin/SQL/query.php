@@ -16,6 +16,19 @@ class query
 			}
 		}
 	}
+	public function getDataFromSelectIf($namatabel,$field, $kondisi)
+	{
+		include('koneksi-admin.php');
+		$sql = "SELECT * FROM ".$namatabel."WHERE." $field."=".$kondisi;
+		$hasil = mysqli_query($conn, $sql);
+		if ( mysqli_num_rows($hasil))
+		{
+			while ( $data=mysqli_fetch_row($hasil))
+			{
+				echo $data['0']."<br>";
+			}
+		}
+	}
 	public function getSumArrow($namatabel)
 	{
 		include('koneksi-admin.php');
