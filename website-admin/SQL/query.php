@@ -3,7 +3,8 @@
 
 class query
 {
-	public function getDataFromSelect($namatabel){
+	public function getDataFromSelect($namatabel)
+	{
 		include('koneksi-admin.php');
 		$sql = "SELECT * FROM ".$namatabel;
 		$hasil = mysqli_query($conn, $sql);
@@ -15,7 +16,8 @@ class query
 			}
 		}
 	}
-	public function getSumArrow($namatabel){
+	public function getSumArrow($namatabel)
+	{
 		include('koneksi-admin.php');
 		$sql = "SELECT COUNT(*) AS 'Jumlah' FROM ".$namatabel;
 		$hasil = mysqli_query($conn, $sql);
