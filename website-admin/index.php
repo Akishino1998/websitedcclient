@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="">
                                 <div class="panel-footer">
                                     <span class="pull-left">Lihat Disini!</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -101,7 +101,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="#" onclick="onclickSukses();">
                                 <div class="panel-footer">
                                     <span class="pull-left">Lihat Disini!</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -274,9 +274,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </div>
         </div>
     <!-- /. WRAPPER  -->
-    <footer >
-        &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
-    </footer>
+    <?php include("assets/layout/footer.php"); ?>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
@@ -287,7 +285,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-
+    <script src="assets/js/sweetalert.min.js"></script>
+    <script>
+        function onclickSukses(){
+            swal({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success",
+  button: "Aww yiss!",
+});
+        }
+    </script>
 
 </body>
 </html>
