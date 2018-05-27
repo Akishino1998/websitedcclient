@@ -10,6 +10,9 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!--CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- Data Table -->
+    <link rel="stylesheet" href="assets\css\dataTables\dataTables.bootstrap.css">
+    <link rel="stylesheet" href="assets\css\dataTables\dataTables.responsive.css">
       <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

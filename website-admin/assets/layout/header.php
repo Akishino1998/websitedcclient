@@ -87,7 +87,7 @@
                                 </li>
                             </ul>
                 </li>
-              
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user-plus"></i>  <i class="fa fa-caret-down"></i>
@@ -101,7 +101,7 @@
                     </ul>
                 </li>
             </ul>
-               
+
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -112,7 +112,7 @@
                         <div class="user-img-div">
                             <img src="assets/img/user.jpg" class="img-circle" />
 
-                           
+
                         </div>
 
                     </li>
@@ -124,20 +124,20 @@
                         <a class="active-menu"  href="index.php"><i class="fa fa-tachometer-alt  "></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="ui.php"><i class="fa fa-venus "></i>UI Elements </a>
-                        
+                        <a href="penerimaan-pc.php"><i class="fa fa-laptop "></i>Daftar Penerimaan </a>
+
                     </li>
-                        
+
                     <li>
                         <a href="table.php"><i class="fa fa-bolt "></i>Data Tables </a>
-                        
+
                     </li>
-                   
-                     
+
+
                      <li>
                         <a href="forms.php"><i class="fa fa-code "></i>Forms</a>
                     </li>
-                   
+
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i>Multilevel Link <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
@@ -165,7 +165,7 @@
                     <li>
                         <a href="blank.php"><i class="fa fa-dashcube "></i>Blank Page</a>
                     </li>
-                   
+
                 </ul>
             </div>
 
