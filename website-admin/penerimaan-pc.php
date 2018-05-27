@@ -13,6 +13,8 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- Data Table -->
     <link rel="stylesheet" href="assets\css\dataTables\jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assets\css\dataTables\dataTables.responsive.css">
+    <link rel="stylesheet" href="assets\css\dataTables\dataTables.bootstrap.css">
     <!--  -->
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" />
     <!-- <link href="assets/css/startmin.css" rel="stylesheet" /> -->
@@ -41,7 +43,7 @@
                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
-                                            <tr>
+                                            <tr class="gradeA">
                                                 <th>Id</th>
                                                 <th>Nama Pelanggan</th>
                                                 <th>Merk PC</th>
@@ -52,92 +54,33 @@
                                                 <th>Staff Penerima</th>
                                             </tr>
                                         </thead>
+                                        <?php
+                                        include('SQL\koneksi-admin.php');
+                                        $sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama
+                                            FROM daftar_penerimaan_pc, anggota, daftar_pelanggan
+                                            WHERE daftar_penerimaan_pc.id_Pelanggan = daftar_pelanggan.id_Pelanggan
+                                            AND daftar_penerimaan_pc.id_Penerima_Staff = anggota.id_Anggota";
+                                        $hasil = mysqli_query($conn, $sql);
+                                        if ( mysqli_num_rows($hasil))
+                                        {
+                                            while ( $data=mysqli_fetch_row($hasil))
+                                            {
+                                         ?>
                                         <tbody>
-                                            <tr class="odd gradeX">
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                                <td class="center">4</td>
-                                                <td class="center">X</td>
+                                            <tr>
+                                                <td><?php echo $data['0']; ?></td>
+                                                <td><?php echo $data['1']; ?></td>
+                                                <td><?php echo $data['2']; ?></td>
+                                                <td><?php echo $data['3']; ?></td>
+                                                <td><?php echo $data['4']; ?></td>
+                                                <td><?php echo $data['5']; ?></td>
+                                                <td><?php echo $data['6']; ?></td>
+                                                <td><?php echo $data['7']; ?></td>
                                             </tr>
-                                            <tr class="even gradeC">
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 5.0</td>
-                                                <td>Win 95+</td>
-                                                <td class="center">5</td>
-                                                <td class="center">C</td>
-                                            </tr>
-                                            <tr class="odd gradeA">
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 5.5</td>
-                                                <td>Win 95+</td>
-                                                <td class="center">5.5</td>
-                                                <td class="center">A</td>
-                                            </tr>
-                                            <tr class="even gradeA">
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 6</td>
-                                                <td>Win 98+</td>
-                                                <td class="center">6</td>
-                                                <td class="center">A</td>
-                                            </tr>
-                                            <tr class="gradeA">
-                                               <td>Misc</td>
-                                               <td>NetFront 3.1</td>
-                                               <td>Embedded devices</td>
-                                               <td class="center">-</td>
-                                               <td class="center">C</td>
-                                           </tr>
-                                           <tr class="gradeA">
-                                               <td>Misc</td>
-                                               <td>NetFront 3.4</td>
-                                               <td>Embedded devices</td>
-                                               <td class="center">-</td>
-                                               <td class="center">A</td>
-                                           </tr>
-                                           <tr class="gradeX">
-                                               <td>Misc</td>
-                                               <td>Dillo 0.8</td>
-                                               <td>Embedded devices</td>
-                                               <td class="center">-</td>
-                                               <td class="center">X</td>
-                                           </tr>
-                                           <tr class="gradeX">
-                                               <td>Misc</td>
-                                               <td>Links</td>
-                                               <td>Text only</td>
-                                               <td class="center">-</td>
-                                               <td class="center">X</td>
-                                           </tr>
-                                           <tr class="gradeX">
-                                               <td>Misc</td>
-                                               <td>Lynx</td>
-                                               <td>Text only</td>
-                                               <td class="center">-</td>
-                                               <td class="center">X</td>
-                                           </tr>
-                                           <tr class="gradeC">
-                                               <td>Misc</td>
-                                               <td>IE Mobile</td>
-                                               <td>Windows Mobile 6</td>
-                                               <td class="center">-</td>
-                                               <td class="center">C</td>
-                                           </tr>
-                                           <tr class="gradeC">
-                                               <td>Misc</td>
-                                               <td>PSP browser</td>
-                                               <td>PSP</td>
-                                               <td class="center">-</td>
-                                               <td class="center">C</td>
-                                           </tr>
-                                           <tr class="gradeU">
-                                               <td>Other browsers</td>
-                                               <td>All others</td>
-                                               <td>-</td>
-                                               <td class="center">-</td>
-                                               <td class="center">U</td>
-                                           </tr>
                                         </tbody>
+                                        <?php
+                                            }
+                                        } ?>
                                     </table>
                                 </div>
                             </div>
