@@ -11,10 +11,9 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!--CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/startmin.css" rel="stylesheet" />
     <!-- Data Table -->
     <link rel="stylesheet" href="assets\css\dataTables\jquery.dataTables.min.css">
-    <link rel="stylesheet" href="assets\css\dataTables\dataTables.responsive.css">
-    <link rel="stylesheet" href="assets\css\dataTables\dataTables.bootstrap.css">
     <!--  -->
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" />
     <!-- <link href="assets/css/startmin.css" rel="stylesheet" /> -->
@@ -30,7 +29,7 @@
     <div id="wrapper">
         <?php include('assets/layout/header.php'); ?>
         <!-- /. SIDEBAR MENU (navbar-side) -->
-        <div id="page-wrapper" class="page-wrapper-cls">
+        <div id="page-wrapper" class="page-wrapper-cls" style="margin-left: 180px;">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-lg-12">
@@ -41,7 +40,7 @@
                             <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <table class="table table-striped table-bordered table-hover display" id="dataTables">
                                         <thead>
                                             <tr class="gradeA">
                                                 <th>Id</th>
@@ -52,22 +51,25 @@
                                                 <th>Keluhan</th>
                                                 <th>Tanggal Penerimaan</th>
                                                 <th>Staff Penerima</th>
+                                                <th>Status Pengembalian</th>
                                             </tr>
                                         </thead>
+                                        <tbody>
                                         <?php
                                         include('SQL\koneksi-admin.php');
-                                        $sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama
-                                            FROM daftar_penerimaan_pc, anggota, daftar_pelanggan
-                                            WHERE daftar_penerimaan_pc.id_Pelanggan = daftar_pelanggan.id_Pelanggan
-                                            AND daftar_penerimaan_pc.id_Penerima_Staff = anggota.id_Anggota";
+                                        $sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama, status_pengembalian_pc.Status_pengembalian
+                                                FROM daftar_penerimaan_pc, anggota, daftar_pelanggan,status_pengembalian_pc
+                                                WHERE daftar_penerimaan_pc.id_Pelanggan = daftar_pelanggan.id_Pelanggan
+                                                AND daftar_penerimaan_pc.id_Penerima_Staff = anggota.id_Anggota
+                                                AND status_pengembalian_pc.id_penerimaan = daftar_penerimaan_pc.id_Penerimaan";
                                         $hasil = mysqli_query($conn, $sql);
                                         if ( mysqli_num_rows($hasil))
                                         {
                                             while ( $data=mysqli_fetch_row($hasil))
                                             {
                                          ?>
-                                        <tbody>
-                                            <tr>
+
+                                            <tr class="odd gradeX">
                                                 <td><?php echo $data['0']; ?></td>
                                                 <td><?php echo $data['1']; ?></td>
                                                 <td><?php echo $data['2']; ?></td>
@@ -76,11 +78,13 @@
                                                 <td><?php echo $data['5']; ?></td>
                                                 <td><?php echo $data['6']; ?></td>
                                                 <td><?php echo $data['7']; ?></td>
+                                                <td><?php echo $data['8']; ?></td>
                                             </tr>
-                                        </tbody>
+
                                         <?php
                                             }
                                         } ?>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -108,18 +112,14 @@
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/startmin.js"></script>
     <!-- Data Table -->
-    <script src="assets\js\dataTables\dataTables.bootstrap.min.js"></script>
     <script src="assets\js\dataTables\jquery.dataTables.min.js"></script>
 
     </script>
     <script>
-        $(document).ready(function() {
-            $('#dataTables-example').DataTable({
-                responsive: true
-            });
-        });
+    $(document).ready(function() {
+        $('#dataTables').DataTable();
+    });
     </script>
 
 </body>
