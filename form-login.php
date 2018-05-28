@@ -65,8 +65,6 @@
 							Klik Disini
 						</a>
 					</div>
-
-
 				</form>
 			</div>
 		</div>
