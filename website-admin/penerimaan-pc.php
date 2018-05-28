@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template</title>
+    <title>Laporan Penerimaan PC | Doctor Computer</title>
     <!-- BOOTSTRAP STYLES-->
     <!-- <link href="assets/css/bootstrap.css" rel="stylesheet" /> -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -97,9 +97,7 @@
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
-    <footer >
-        &copy; 2018 Doctor Computer | By : <a href="http://www.designbootstrap.com/" target="_blank">Doctor Computer</a>
-    </footer>
+    <?php include('layout/footer.php'); ?>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
