@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Studio7 - Digital Agency</title>
+<title>Beranda | Doctor Computer</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -39,7 +39,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-moon-o fa-rotate-90"></i> Studio7</a> </div>
+      <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-moon-o fa-rotate-90"></i> Doctor Computer</a> </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -47,9 +47,8 @@
         <li><a href="#page-top" class="page-scroll">Home</a></li>
         <li><a href="#services" class="page-scroll">Services</a></li>
         <li><a href="#about" class="page-scroll">About</a></li>
-        <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
-        <li><a href="#team" class="page-scroll">Team</a></li>
         <li><a href="#contact" class="page-scroll">Contact</a></li>
+        <li><a href="">Login</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse --> 
@@ -63,9 +62,9 @@
       <div class="container">
         <div class="row">
           <div class="intro-text">
-            <h1>Welcome to <span class="brand">Studio7</span></h1>
-            <p>We are a digital agency that loves what we do</p>
-            <a href="#services" class="btn btn-default btn-lg page-scroll">Learn More</a> </div>
+            <h1>Welcome to <span class="brand">Doctor Computer</span></h1>
+            <p>Laptop Anda Rusak? Servisin Aja</p>
+            <a href="#services" class="btn btn-default btn-lg page-scroll">PANGGIL KAMI SEKARANG!</a> </div>
         </div>
       </div>
     </div>
@@ -76,23 +75,23 @@
   <div class="container">
     <div class="col-md-8 col-md-offset-2 section-title">
       <h2>Our Services</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor apibus lornare diam commodo nibh.</p>
+      <p>KAMI MERUPAKAN JASA SERVIS LAPTOP PERTAMA DISAMARINDA YANG SIAP MENJEMPUT DEVICE DIRUMAH ANDA</p>
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-3"> <i class="fa fa-desktop"></i>
-        <h4>Web Design</h4>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
+        <h4>JUAL/BELI LAPTOP</h4>
+        <p>.</p>
       </div>
       <div class="col-xs-6 col-md-3"> <i class="fa fa-gears"></i>
-        <h4>App Development</h4>
+        <h4>SERVICE PC/SMARTPHONE</h4>
         <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque.</p>
       </div>
       <div class="col-xs-6 col-md-3"> <i class="fa fa-rocket"></i>
-        <h4>Branding</h4>
+        <h4>SIAP SERVICE DIRUMAH</h4>
         <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
       </div>
       <div class="col-xs-6 col-md-3"> <i class="fa fa-line-chart"></i>
-        <h4>Marketing</h4>
+        <h4>JUAL SPAREPART PC DAN SMARTPHONE</h4>
         <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque.</p>
       </div>
     </div>
@@ -121,103 +120,7 @@
   </div>
 </div>
 <!-- Portfolio Section -->
-<div id="portfolio">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2 section-title text-center">
-      <h2>Our Portfolio</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor apibus lornare diam commodo nibh.</p>
-    </div>
-    <div class="categories">
-      <ul class="cat">
-        <li>
-          <ol class="type">
-            <li><a href="#" data-filter="*" class="active">All</a></li>
-            <li><a href="#" data-filter=".web">Web Design</a></li>
-            <li><a href="#" data-filter=".app">App Development</a></li>
-            <li><a href="#" data-filter=".branding">Branding</a></li>
-          </ol>
-        </li>
-      </ul>
-      <div class="clearfix"></div>
-    </div>
-    <div class="row">
-      <div class="portfolio-items">
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>App Development</small> </div>
-              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>App Development</small> </div>
-              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Branding</small> </div>
-              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>App Development, Branding</small> </div>
-              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- Team Section -->
 <div id="team" class="text-center">
   <div class="container">
