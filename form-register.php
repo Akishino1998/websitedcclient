@@ -34,33 +34,30 @@
 					<span class="login100-form-title">
 						Register Member
 					</span>
-
 					<div class="wrap-input100 validate-input" data-validate = "Username Harus Diisi ">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="far fa-user" aria-hidden="true"></i><!-- ganti gambarnya -->
+						<i class="far fa-user" aria-hidden="true"></i><!-- ganti gambarnya -->
 						</span>
 					</div>
-
 					<div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi">
 						<input class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+						<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi">
 						<input class="input100" type="password" name="pass2" placeholder="Re-Type Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+						<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
-					</div>
-					
+					</div>				
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							<a href="form-register-proses.php">Register</a>
+						<a href="form-register-proses.php">Register</a>
 						</button>
 					</div>
 

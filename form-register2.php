@@ -22,12 +22,16 @@
     <div class="row">
       <h4>Account</h4>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Full Name"/>
+        <input type="text" placeholder="First Name"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+	  <div class="input-group input-group-icon">
+        <input type="text" placeholder="Last Name"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
         <input type="text" placeholder="Alamat"/>
-        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        <div class="input-icon"><i class="fa fa-location"></i></div>
       </div>
 	  <div class="input-group input-group-icon">
         <input type="email" placeholder="Email Adress"/>
