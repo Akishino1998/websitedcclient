@@ -174,7 +174,7 @@ a:hover {
 	color:#fff;	
 }
 
-.align-center {
+.align-center {	
 	text-align:center;
 	background-color:#fff;
 	color:#000;
@@ -270,25 +270,36 @@ box-shadow: 1px 2px 2px 4px rgba(204,204,204,1);
   border-right: 1px solid #eee;
   border-left: 1px solid #eee;
   margin-top:50px;
+  margin-right:100px;
 }
 
 .blog h5 {
 	color:#000;
 	margin-left:20px;
 	text-transform:uppercase;
-	margin-top:10px;
-}
-.blog img {
-	margin-top:10px;
-	margin-bottom:10px;	
+	margin-top:-55px;
+	
 }
 
-.blog h3,p {
+.blog h3{
+	text-align:center;
 	color:#000;
 	padding:15px;
+	text-transform:uppercase;
 }
-.blog .ficon {
+.blog h2{
 	text-align:center;
+	color:#000;
+}
+.blog h3{
+	text-align:center;
+	color:#000;
+}
+.blog h5{
+	text-align:center;
+	color:#000;
+	margin-left:350px;
+	text-transform:uppercase;
 	margin-bottom:30px;
 }
 .form-search .form-control {
@@ -307,12 +318,7 @@ box-shadow: 1px 2px 2px 4px rgba(204,204,204,1);
 	color:#000;
 
 }
-.media-list {
-  padding-left: 0;
-  list-style: none;
-  margin-left:90px;
-  margin-bottom:20px;
-}
+
 
 .panel {
 	margin-top:20px;
@@ -356,15 +362,6 @@ box-shadow: 1px 2px 2px 4px rgba(204,204,204,1);
 	
 	padding:15px 20px;
 }
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid #eee;
-  color:#000;
-}
 .list-group-item:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -380,38 +377,16 @@ box-shadow: 1px 2px 2px 4px rgba(204,204,204,1);
   background-color:#fff;
   color:#000;
 }
-.popular-tags h5 {
-	color:#6D9C91;
-	margin-bottom:30px;
-	text-align:center;
-}
-.popular-tags ul.tags {
-	list-style:none;
-	margin:0;
-	margin-left: 0;
-	padding-left:0;
-	
-}
-.popular-tags ul.tags li {
-	margin:0 5px 15px 0;
-	display:inline-block;
-}
-.popular-tags ul.tags li a {
-	background:#eee;
-	color:#333;
-	padding:5px 10px;
-}
-.popular-tags ul.tags li a:hover {
-	text-decoration:none;
-	color:#fff;
-	background-color:#6D9C91;
-}
+
 
 /* --- Contact area --- */
 form {
 	margin-top:50px;
 	margin-bottom:50px;
+	text-align:center;
+
 }
+
 label {
 	color:#6D9C91;
 	font-size:14px;
@@ -471,14 +446,14 @@ address br {
 	
 }
 .copyright {
-	text-align:center;
+	text-align:left;
 }
 .copyright a {
 	color:#fff;
 }
 
 .sub-footer {
-	 background-color: #6D9C91;
+	 background-color: #fff;
 }
 ul.social-network {
 	list-style:none;
@@ -489,9 +464,9 @@ ul.social-network {
 ul.social-network li {
 	display:inline;
 	margin: 0 5px;
-	color:#fff;
+	color:#000;
 }
 ul.social-network li a {	
-	color:#fff;
+	color:#000;
 	
 }
