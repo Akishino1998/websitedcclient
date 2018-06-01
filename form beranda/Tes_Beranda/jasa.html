@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resi Bootstrap Template</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Indie+Flower|Josefin+Sans|Jua|Oswald" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/responsive-slider.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link href="css/style.css" rel="stylesheet">	
+	<link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\style-jasa.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,79 +33,62 @@
 						</div>
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="index.html">Home</a></li>
-								<li role="presentation"><a href="jasa.html">Jasa</a></li>
+								<li role="presentation" ><a href="index.html">Home</a></li>
+								<li role="presentation" class="active"><a href="jasa.html">Jasa</a></li>
 								<li role="presentation"><a href="item.html">Item</a></li>
 								<li role="presentation"><a href="order.html">Order</a></li>
 								<li role="presentation"><a href="about.html">About</a></li>
 								<li role="presentation"><a href="#.html">Login</a></li>
 							</ul>
 						</div>
-					</div>			
+					</div>
 				</nav>
 			</div>
 		</div>
 	</header>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
 				<div class="page-header">
-					<div class="blog">
-									
-					
-						<p></p>
-						
-						<h3>Service	</h3>
-						
-						<h2>
-						<a href="" alt="">INSTAL ULANG</a></br>
-						</h2>
-						
-						<h3>
-						<tr>
-						<td>Service </td>
-						<td>:</td><td>
-						<select name="tema">
-							<option value="Mendaki" selected>HP</option>
-							<option value="Refreshing">Labtop</option>
-							<option value="Umum">CPU</option>
-							</select>
-						</tr>
-						</h3>
-						
-						<h5>
-						<input type="submit" name="submit" value="Mulai Pesan">
-						</h5>
-						
+
+					<div class="box">
+            <form method="post">
+              <h3>Barang Apa Yang Mau Kami Service?</h3>
+              <div class="center">
+                <select name="pilihan_service" id="sources" class="custom-select sources" placeholder="Barang Apa?">
+                  <option value="laptop">Laptop</option>
+                  <option value="pc">PC</option>
+                  <option value="smartphone">Smartphone</option>
+                </select>
+                <div class="btn">
+                  <a href="#" class="btn-submit">Servisin Sekarang</a>
+                </div>
+              </div>
+            </form>
 					</div>
-				</div>	
+				</div>
 			</div>
-			
-	
+
 					<div class="panel-heading">
-						<strong>Waahhhhhh</strong>
+						<strong> <h2> DOCTOR COMPUTER</h2> </strong>
 					</div>
 					<div class="panel-body">
 						<div class="media">
-							<a class="media-left" href="#">
-								<img src="img/logojasa.png" alt="">
-							</a>
 							<div class="media-body">
-								<h4 class="media-heading">Service Doctor Computer!!!!!</h4>
-								<p>Service di Doctor Computer adalah solusi tepat untuk masalah Computer anda</br>
-								bukan hanya Computer , anda dapat mengservice PC dan HP anda,</br>
-								dengan harga yang terjangkau dan para teknisi yang handal
-								serta dapat di andalkan , dan yang terpenting sangat terpercaya .
+								<h4 class="media-heading">Service Computer Delivery</h4>
+								<p>Adalah suatu unit usaha service bidang komputer yang pertama kali membuat suatu trobosan baru yaitu "<b><i>service delivery</i></b>" di mana pelanggan tak perlu lagi keluar rumah hanya untuk sekedar service komputernya.
 								</p>
 							</div>
 						</div>
 					</div>
-		
+
 	<hr>
+  <br><br>
 	<!--start footer-->
+
 	<footer>
-				
+
 		<div class="sub-footer">
 			<div class="container">
 				<div class="row">
@@ -122,31 +106,34 @@
 							<p>
 								<span>&copy;Resi 2014 All right reserved. By </span><a href="http://bootstraptaste.com" target="_blank">Bootstraptaste</a>
 							</p>
-                            <!-- 
-                                All links in the footer should remain intact. 
+                            <!--
+                                All links in the footer should remain intact.
                                 Licenseing information is available at: http://bootstraptaste.com/license/
                                 You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Resi
                             -->
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
 	</footer>
 	<!--end footer-->
-	
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/responsive-slider.js"></script>
 	<script src="js/wow.min.js"></script>
+  <script src="js/style-jasa.js"></script>
+
+  </script>
 	<script>
 	wow = new WOW(
 	 {
-	
-		}	) 
+
+		}	)
 		.init();
 	</script>
   </body>
