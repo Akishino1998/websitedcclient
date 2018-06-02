@@ -1,6 +1,4 @@
-body{
-  background-color: 
-}
+
 .title{
   margin: 50px auto 0 auto;
   text-align:center;
@@ -34,6 +32,12 @@ body{
 
 .gallery .column.col1{
   background: url("https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/26814998_885407318286128_6199044592536706166_n.jpg?_nc_cat=0&oh=2763c447ff29c7fb4a70ddbfedaf14b9&oe=5BC1DEB2");
+  background-repeat: no-repeat;
+  max-width: 350px;
+  height: 405px;
+}
+.gallery .column.col2{
+  background-image: url("/img/about/smile.png");
   background-repeat: no-repeat;
   max-width: 350px;
   height: 405px;
