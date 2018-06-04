@@ -37,7 +37,13 @@
   height: 405px;
 }
 .gallery .column.col2{
-  background-image: url("/img/about/smile.png");
+  background-image: url("https://1.bp.blogspot.com/-Leo9tZSkx3o/WxOToChajYI/AAAAAAAAA7I/IXvMOjd7XKIHan9_I3Y4w0XbeFNZ1oANwCLcBGAs/s1600/smile.png");
+  background-repeat: no-repeat;
+  max-width: 350px;
+  height: 405px;
+}
+.gallery .column.col3{
+  background-image: url("https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/31670621_2061316257217236_3438379091500204032_n.jpg?_nc_cat=0&oh=f05e12fb3e5ac0f860453f174bffd014&oe=5B7D262F");
   background-repeat: no-repeat;
   max-width: 350px;
   height: 405px;
