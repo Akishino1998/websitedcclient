@@ -31,14 +31,46 @@ class query
 	}
 	public function getSumArrow($namatabel)
 	{
-		include('koneksi-admin.php');
-		$sql = "SELECT COUNT(*) AS 'Jumlah' FROM ".$namatabel;
-		$hasil = mysqli_query($conn, $sql);
-		if ( mysqli_num_rows($hasil))
+		if($namatabel == 'delivery_jasa')
 		{
-			while ( $data=mysqli_fetch_assoc($hasil))
+			include('koneksi-admin.php');
+			$sql = "SELECT COUNT(*) AS 'Jumlah' FROM ".$namatabel. " WHERE Status='Belum'";
+			$hasil = mysqli_query($conn, $sql);
+			if ( mysqli_num_rows($hasil))
 			{
-				echo $data['Jumlah'];
+				while ( $data=mysqli_fetch_assoc($hasil))
+				{
+					echo $data['Jumlah'];
+				}
+			}
+		}
+		else if($namatabel == 'pemesanan_barang')
+		{
+			include('koneksi-admin.php');
+			$sql = "SELECT COUNT(*) AS 'Jumlah' FROM ".$namatabel. " WHERE Keterangan='Belum'";
+			$hasil = mysqli_query($conn, $sql);
+			if ( mysqli_num_rows($hasil))
+			{
+				while ( $data=mysqli_fetch_assoc($hasil))
+				{
+					echo $data['Jumlah'];
+				}
+			}
+		}
+		else if($namatabel == 'daftar_penerimaan_pc')
+		{
+			include('koneksi-admin.php');
+			$sql = "SELECT COUNT(daftar_penerimaan_pc.id_Penerimaan) AS 'Jumlah' FROM daftar_penerimaan_pc, status_pengembalian_pc 
+				WHERE daftar_penerimaan_pc.id_Penerimaan = status_pengembalian_pc.id_penerimaan
+				AND
+				status_pengembalian_pc.Status_pengembalian = 'Belum'";
+			$hasil = mysqli_query($conn, $sql);
+			if ( mysqli_num_rows($hasil))
+			{
+				while ( $data=mysqli_fetch_assoc($hasil))
+				{
+					echo $data['Jumlah'];
+				}
 			}
 		}
 	}

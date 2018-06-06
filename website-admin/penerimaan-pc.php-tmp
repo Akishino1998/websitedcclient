@@ -213,36 +213,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
-                                        include('SQL\koneksi-admin.php');
-                                        $sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama, status_pengembalian_pc.Status_pengembalian
+<?php
+include ('SQL\koneksi-admin.php');
+$sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama, status_pengembalian_pc.Status_pengembalian
                                                 FROM daftar_penerimaan_pc, anggota, daftar_pelanggan,status_pengembalian_pc
                                                 WHERE daftar_penerimaan_pc.id_Pelanggan = daftar_pelanggan.id_Pelanggan
                                                 AND daftar_penerimaan_pc.id_Penerima_Staff = anggota.id_Anggota
                                                 AND status_pengembalian_pc.id_penerimaan = daftar_penerimaan_pc.id_Penerimaan";
-                                        $hasil = mysqli_query($conn, $sql);
-                                        if ( mysqli_num_rows($hasil))
-                                        {
-                                            while ( $data=mysqli_fetch_row($hasil))
-                                            {
-                                         ?>
+$hasil = mysqli_query($conn, $sql);
+if (mysqli_num_rows($hasil)) {
+	while ($data = mysqli_fetch_row($hasil)) {
+		?>
 
-                                            <tr class="odd gradeX">
-                                                <td><?php echo $data['0']; ?></td>
-                                                <td><?php echo $data['1']; ?></td>
-                                                <td><?php echo $data['2']; ?></td>
-                                                <td><?php echo $data['3']; ?></td>
-                                                <td><?php echo $data['4']; ?></td>
-                                                <td><?php echo $data['5']; ?></td>
-                                                <td><?php echo $data['6']; ?></td>
-                                                <td><?php echo $data['7']; ?></td>
-                                                <td><?php echo $data['8']; ?></td>
-                                            </tr>
+		                                            <tr class="odd gradeX">
+		                                                <td><?php echo $data['0'];?></td>
+		                                                <td><?php echo $data['1'];?></td>
+		                                                <td><?php echo $data['2'];?></td>
+		                                                <td><?php echo $data['3'];?></td>
+		                                                <td><?php echo $data['4'];?></td>
+		                                                <td><?php echo $data['5'];?></td>
+		                                                <td><?php echo $data['6'];?></td>
+		                                                <td><?php echo $data['7'];?></td>
+		                                                <td><?php echo $data['8'];?></td>
+		                                            </tr>
 
-                                        <?php
-                                            }
-                                        } ?>
-                                        </tbody>
+		<?php
+	}
+}?>
+</tbody>
                                     </table>
                                 </div>
                             </div>
@@ -254,10 +252,10 @@
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
-    
+
     <!-- /. WRAPPER  -->
-    <?php include('assets/layout/footer.php'); ?>
-    <!-- /. FOOTER  -->
+<?php include ('assets/layout/footer.php');?>
+<!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.11.1.js"></script>
