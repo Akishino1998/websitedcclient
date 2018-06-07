@@ -108,22 +108,21 @@
                 <ul class="nav" id="main-menu">
                     <li>
                         <div class="user-img-div">
-                            <?php 
-                                $id = $_SESSION['user'];
-                                include('SQL/query.php');
-                                $query = new query();
-                                
-                                ?> 
-                            <img src="<?php $query->getFotoStaff($id);  ?>" class="img-circle" />
+<?php
+$id = $_SESSION['user'];
+include ('SQL/query.php');
+$query = new query();
+
+?>
+                            <img src="<?php $query->getFotoStaff($id);?>" class="img-circle" />
                         </div>
                     </li>
                      <li>
-                        <a  href="#"> 
-                            <strong> 
-                                <?php 
-                                $query->getNameStaff($id); 
-                                ?> 
-                            </strong>
+                        <a  href="#">
+                            <strong>
+<?php
+$query->getNameStaff($id);
+?></strong>
                         </a>
                     </li>
                     <li>

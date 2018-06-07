@@ -90,6 +90,24 @@ class query
 			}
 		}
 	}
+	public function getNameStaff($id)
+	{
+		include('koneksi-admin.php');
+		$sql = "SELECT Nama FROM anggota WHERE id_Anggota='$id'";
+		$hasil = mysqli_query($conn, $sql);
+		while ($data=mysqli_fetch_row($hasil)) {
+			echo $data['0'];
+		}
+	}
+	public function getFotoStaff($id)
+	{
+		include('koneksi-admin.php');
+		$sql = "SELECT foto FROM anggota WHERE id_Anggota='$id'";
+		$hasil = mysqli_query($conn, $sql);
+		while ($data=mysqli_fetch_row($hasil)) {
+			echo $data['0'];
+		}
+	}
 }
 
 
