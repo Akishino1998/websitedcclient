@@ -95,7 +95,7 @@
                 <li><a href="#"><i class="fa fa-user-plus"></i> My Profile</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                <li><a href="SQL\logout.php"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>
             </ul>
         </li>

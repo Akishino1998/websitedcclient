@@ -40,7 +40,8 @@ if(isset($_POST['user']))
 		{
 			if($data['0'] == $username)
 			{
-				if($data['1'] == $password)
+
+				if(password_verify($password, $data['1']))
 				{
 					if($data['3']=='Master')
 					{
@@ -48,7 +49,7 @@ if(isset($_POST['user']))
 						$_SESSION['type_user'] = 'Master';
 						$_SESSION['user'] = $data['2'];
 						echo $_SESSION['user'];
-						//header('Location:index.php');
+						header('Location:index.php');
 					}
 					elseif($data['3']=='Admin') 
 					{
