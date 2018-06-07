@@ -180,15 +180,16 @@
         <div id="page-wrapper" class="page-wrapper-cls" style="margin-left: 180px;">
             <div id="page-inner">
                 <div class="row">
+                    <h2>Pagi</h2>
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Penerimaan PC
+                                <h4>Daftar Penerimaan PC Yang Belum Dikerjakan</h4>
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover display" id="dataTables" style="width: 100%">
+                                    <table class="table table-striped table-bordered table-hover display" id="dataTables">
                                         
                                     </style>
                                         <thead>
@@ -201,17 +202,17 @@
                                                 <th>Keluhan</th>
                                                 <th>Tanggal Penerimaan</th>
                                                 <th>Staff Penerima</th>
-                                                <th>Status Pengembalian</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
                                         include('SQL\koneksi-admin.php');
-                                        $sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama, status_pengembalian_pc.Status_pengembalian
+                                        $sql = "SELECT daftar_penerimaan_pc.id_Penerimaan, CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC, daftar_penerimaan_pc.Kelengkapan, daftar_penerimaan_pc.Keluhan, daftar_penerimaan_pc.Tanggal_Terima, anggota.Nama
                                                 FROM daftar_penerimaan_pc, anggota, daftar_pelanggan,status_pengembalian_pc
                                                 WHERE daftar_penerimaan_pc.id_Pelanggan = daftar_pelanggan.id_Pelanggan
                                                 AND daftar_penerimaan_pc.id_Penerima_Staff = anggota.id_Anggota
-                                                AND status_pengembalian_pc.id_penerimaan = daftar_penerimaan_pc.id_Penerimaan";
+                                                AND status_pengembalian_pc.id_penerimaan = daftar_penerimaan_pc.id_Penerimaan
+                                                AND status_pengembalian_pc.Status_pengembalian = 'Belum'";
                                         $hasil = mysqli_query($conn, $sql);
                                         if ( mysqli_num_rows($hasil))
                                         {
@@ -228,7 +229,6 @@
                                                 <td><?php echo $data['5']; ?></td>
                                                 <td><?php echo $data['6']; ?></td>
                                                 <td><?php echo $data['7']; ?></td>
-                                                <td><?php echo $data['8']; ?></td>
                                             </tr>
 
                                         <?php
@@ -241,8 +241,70 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>Daftar Penerimaan PC Yang Sudah Dikerjakan</h4>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover display" id="dataTables2" style="width: 100%">
+                                        
+                                    </style>
+                                        <thead>
+                                            <tr class="gradeA">
+                                                <th>Nama Pelanggan</th>
+                                                <th>Merk PC</th>
+                                                <th>Seri PC</th>
+                                                <th>Tanggal Penerimaan</th>
+                                                <th>Tanggal Pengembalian</th>
+                                                <th>Penerima</th>
+                                                <th>Teknisi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        include('SQL\koneksi-admin.php');
+                                        $sql = "SELECT CONCAT(Nama_Depan,' ' , Nama_Belakang) AS 'Nama Pelanggan', daftar_penerimaan_pc.Merk_PC, daftar_penerimaan_pc.Seri_PC,  daftar_penerimaan_pc.Tanggal_Terima,status_pengembalian_pc.Tgl_Pengembalian, anggota.Nama AS 'Penerima', status_pengembalian_pc.teknisi  AS 'Teknisi'
+                                                FROM daftar_penerimaan_pc, anggota, daftar_pelanggan,status_pengembalian_pc
+                                                WHERE daftar_penerimaan_pc.id_Pelanggan = daftar_pelanggan.id_Pelanggan
+                                                AND daftar_penerimaan_pc.id_Penerima_Staff = anggota.id_Anggota
+                                                AND status_pengembalian_pc.id_penerimaan = daftar_penerimaan_pc.id_Penerimaan
+                                                AND status_pengembalian_pc.Status_pengembalian = 'Sudah'";
+                                        $hasil = mysqli_query($conn, $sql);
+                                        if ( mysqli_num_rows($hasil))
+                                        {
+                                            while ( $data=mysqli_fetch_row($hasil))
+                                            {
+                                         ?>
+
+                                            <tr class="odd gradeX">
+                                                <td><?php echo $data['0']; ?></td>
+                                                <td><?php echo $data['1']; ?></td>
+                                                <td><?php echo $data['2']; ?></td>
+                                                <td><?php echo $data['3']; ?></td>
+                                                <td><?php echo $data['4']; ?></td>
+                                                <td><?php echo $data['5']; ?></td>
+                                                <td><?php echo $data['6']; ?></td>
+
+                                            </tr>
+
+                                        <?php
+                                            }
+                                        }?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- /. PAGE INNER  -->
+
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
@@ -259,6 +321,11 @@
     <script>
     $(document).ready(function() {
         $('#dataTables').DataTable();
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('#dataTables2').DataTable();
     });
     </script>
 
