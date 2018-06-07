@@ -4,20 +4,10 @@
    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laporan Penerimaan PC | Doctor Computer</title>
-    <!-- BOOTSTRAP STYLES-->
-    <!-- <link href="assets/css/bootstrap.css" rel="stylesheet" /> -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- FONTAWESOME ICONS STYLES-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">
     <link href="assets\css\font-awesome\css\fontawesome-all.css" rel="stylesheet" />
-    <!--CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/startmin.css" rel="stylesheet" />
-    <!-- Data Table -->
-    <link rel="stylesheet" href="assets\css\dataTables\jquery.dataTables.min.css">
-    <!--  -->
-    <link href="assets/css/metisMenu.min.css" rel="stylesheet" />
-    <!-- <link href="assets/css/startmin.css" rel="stylesheet" /> -->
-    <!-- <link href="assets/css/startmin.css" rel="stylesheet" /> -->
       <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -198,7 +188,9 @@
                             <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover display" id="dataTables">
+                                    <table class="table table-striped table-bordered table-hover display" id="dataTables" style="width: 100%">
+                                        
+                                    </style>
                                         <thead>
                                             <tr class="gradeA">
                                                 <th>Id</th>
@@ -255,22 +247,13 @@
         <!-- /. PAGE WRAPPER  -->
     </div>
     
-    <!-- /. WRAPPER  -->
+
     <?php include('assets/layout/footer.php'); ?>
-    <!-- /. FOOTER  -->
+
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.11.1.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/startmin.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
-    <!-- Data Table -->
-    <script src="assets\js\dataTables\jquery.dataTables.min.js"></script>
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap.min.js"></script>
 
     </script>
     <script>
