@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2018 at 08:56 AM
+-- Generation Time: Jun 07, 2018 at 07:47 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -152,8 +152,8 @@ INSERT INTO `daftar_harga_service` (`id_Service`, `Nama_Service`, `Harga_Service
 CREATE TABLE `daftar_pelanggan` (
   `id_Pelanggan` varchar(10) NOT NULL,
   `username` varchar(50) DEFAULT NULL,
-  `Nama_Depan` varchar(30) DEFAULT NULL,
-  `Nama_Belakang` varchar(30) DEFAULT NULL,
+  `Nama_Depan` varchar(30) DEFAULT ' ',
+  `Nama_Belakang` varchar(30) DEFAULT ' ',
   `kode_pos` int(11) DEFAULT NULL,
   `Alamat` text,
   `NO_HP` varchar(14) DEFAULT NULL,
@@ -166,8 +166,8 @@ CREATE TABLE `daftar_pelanggan` (
 
 INSERT INTO `daftar_pelanggan` (`id_Pelanggan`, `username`, `Nama_Depan`, `Nama_Belakang`, `kode_pos`, `Alamat`, `NO_HP`, `Email`) VALUES
 ('0', NULL, 'Unknow', NULL, NULL, 'Unknow', 'Unknow', 'Unknow'),
-('0001', NULL, 'Eko', NULL, NULL, 'Suryanata', '085828949395', 'ekopujianto48@gmail.'),
-('0002', NULL, 'Indah', NULL, NULL, 'Hatiku', '085787127035', 'indah@gmail.com');
+('0001', NULL, 'Eko', '', NULL, 'Suryanata', '085828949395', 'ekopujianto48@gmail.'),
+('0002', NULL, 'Indah', ' ', NULL, 'Hatiku', '085787127035', 'indah@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -191,7 +191,9 @@ CREATE TABLE `daftar_penerimaan_pc` (
 --
 
 INSERT INTO `daftar_penerimaan_pc` (`id_Penerimaan`, `id_Pelanggan`, `Merk_PC`, `Seri_PC`, `Kelengkapan`, `Keluhan`, `Tanggal_Terima`, `id_Penerima_Staff`) VALUES
-('1', '0001', 'Axioo', 'wad', 'awd', 'qawd', '2018-04-13 13:39:06', '0009');
+('1', '0001', 'Axioo', 'wad', 'awd', 'qawd', '2018-04-13 13:39:06', '0009'),
+('2', '0002', 'Acer', '900', 'Batrai', 'Instal Ulang', '2018-05-27 12:58:41', '0007'),
+('3', '0002', 'Acer', '90000', 'dawd', 'awdawd', '2018-05-27 13:05:04', '0001');
 
 --
 -- Triggers `daftar_penerimaan_pc`
@@ -263,15 +265,18 @@ CREATE TABLE `delivery_jasa` (
   `id_pelanggan` varchar(10) DEFAULT NULL,
   `Tanggal` date DEFAULT NULL,
   `Keterangan` text,
-  `Status` enum('Belum','Selesai','Cancel') DEFAULT 'Belum'
+  `Status` enum('Belum','Selesai','Cancel') DEFAULT 'Belum',
+  `kurir` varchar(50) DEFAULT 'Belum Tersedia'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `delivery_jasa`
 --
 
-INSERT INTO `delivery_jasa` (`id_delivery_jasa`, `id_pelanggan`, `Tanggal`, `Keterangan`, `Status`) VALUES
-('0001', '0002', '2018-04-13', 'AAA', 'Selesai');
+INSERT INTO `delivery_jasa` (`id_delivery_jasa`, `id_pelanggan`, `Tanggal`, `Keterangan`, `Status`, `kurir`) VALUES
+('0001', '0002', '2018-04-13', 'AAA', 'Selesai', NULL),
+('0002', '0001', '2018-05-18', 'AA', 'Selesai', NULL),
+('0003', '0001', '2018-06-07', 'daw', 'Belum', 'Belum Tersedia');
 
 -- --------------------------------------------------------
 
@@ -776,12 +781,20 @@ CREATE TABLE `pendapatan_jasa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `pendapatan_jasa`
+--
+
+INSERT INTO `pendapatan_jasa` (`id_Pendapatan`, `id_Penerimaan`, `Tanggal`, `Nama_Teknisi`, `Total`, `Id_delivery`) VALUES
+('1', '1', '2018-06-07 13:47:25', '0010', 0, '0002');
+
+--
 -- Triggers `pendapatan_jasa`
 --
 DELIMITER $$
-CREATE TRIGGER `StatusPengembalian` AFTER INSERT ON `pendapatan_jasa` FOR EACH ROW BEGIN
+CREATE TRIGGER `pendapatan_jasa_after_insert` AFTER INSERT ON `pendapatan_jasa` FOR EACH ROW BEGIN
 UPDATE status_pengembalian_pc
-SET status_pengembalian_pc.Status_pengembalian = 'Sudah' 
+SET status_pengembalian_pc.Status_pengembalian = 'Sudah',
+status_pengembalian_pc.teknisi = NEW.Nama_Teknisi
 WHERE NEW.id_Penerimaan = status_pengembalian_pc.id_penerimaan;
 END
 $$
@@ -829,15 +842,18 @@ CREATE TABLE `status_pengembalian_pc` (
   `id_Pelanggan` varchar(10) DEFAULT NULL,
   `Tgl_Terima` datetime DEFAULT NULL,
   `Tgl_Pengembalian` datetime DEFAULT NULL,
-  `Status_pengembalian` enum('Sudah','Belum') DEFAULT 'Belum'
+  `Status_pengembalian` enum('Sudah','Belum') DEFAULT 'Belum',
+  `teknisi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `status_pengembalian_pc`
 --
 
-INSERT INTO `status_pengembalian_pc` (`id_penerimaan`, `id_Pelanggan`, `Tgl_Terima`, `Tgl_Pengembalian`, `Status_pengembalian`) VALUES
-('1', '0001', '2018-04-13 13:39:06', NULL, 'Sudah');
+INSERT INTO `status_pengembalian_pc` (`id_penerimaan`, `id_Pelanggan`, `Tgl_Terima`, `Tgl_Pengembalian`, `Status_pengembalian`, `teknisi`) VALUES
+('1', '0001', '2018-04-13 13:39:06', NULL, 'Sudah', '0010'),
+('2', '0002', '2018-05-27 12:58:41', NULL, 'Belum', 'Belum'),
+('3', '0002', '2018-05-27 13:05:04', NULL, 'Belum', 'Belum');
 
 -- --------------------------------------------------------
 
@@ -928,7 +944,8 @@ ALTER TABLE `daftar_supplier`
 --
 ALTER TABLE `delivery_jasa`
   ADD PRIMARY KEY (`id_delivery_jasa`),
-  ADD KEY `FK_pemesanan_jasabarang_daftar_pelanggan` (`id_pelanggan`);
+  ADD KEY `FK_pemesanan_jasabarang_daftar_pelanggan` (`id_pelanggan`),
+  ADD KEY `FK_delivery_jasa_anggota` (`kurir`);
 
 --
 -- Indexes for table `detail_pembelian_barang`
