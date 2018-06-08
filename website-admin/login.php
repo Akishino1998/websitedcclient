@@ -53,14 +53,12 @@ if(isset($_POST['user']))
 					}
 					elseif($data['3']=='Admin') 
 					{
-						session_start();
 						$_SESSION['type_user'] = 'Admin';
 						$_SESSION['user'] = $username;
 						header('Location:index.php');
 					}
 					elseif($data['3']=='Sales') 
 					{
-						session_start();
 						$_SESSION['type_user'] = 'Sales';
 						$_SESSION['user'] = $username;
 						header('Location:index.php');

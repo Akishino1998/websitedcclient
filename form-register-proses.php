@@ -1,11 +1,12 @@
-<?php
-
-$pass1 = $_POST['pass'];
-$pass2 = $_POST['pass2'];
-$user = $_POST['username'];
-if($pass1 == $pass2){
-	echo "Berhasil";
-}else{
-	echo "Tidak Berhasil";
-}
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+</body>
+</html>

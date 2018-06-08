@@ -1,3 +1,9 @@
+<?php 
+
+session_start(); 
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +26,15 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+		.btn-login{
+			text-decoration: none;
+			font-size: 20px;
+			color: white;
+			font-family: 'Roboto', sans-serif;
+		}
+	</style>
 </head>
 <body>
 	<div class="limiter">
@@ -30,21 +45,20 @@
 					<img src="img/logo.png" alt="IMG">
 				</div>
 
-			<form method="get" action="form-login-process.php">
+			<form method="post" action="form-login.php">
 					<span class="login100-form-title">
 						Login
 					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Contoh Email : drcomputer@example.com">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input" data-validate = "Username dibutuhkan"" >
+						<input class="input100" type="text" name="username" placeholder="Username" id="username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 						</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password dibutuhkan">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -53,7 +67,7 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							<a href="form-login.php" class="btn-login">Login</a>
 						</button>
 					</div>
 
@@ -69,10 +83,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -92,3 +102,81 @@
 
 </body>
 </html>
+<?php 
+if(isset($_POST['username']))
+{
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	include('koneksi.php');
+	$sql = "SELECT * FROM user_pelanggan WHERE username='$username'";
+	$hasil = mysqli_query($conn, $sql);
+	if(mysqli_num_rows($hasil))
+	{
+		while($data=mysqli_fetch_row($hasil))
+		{
+
+			if($data['0'] == $username)
+			{
+				if(password_verify($password, $data['1']))
+				{
+					$_SESSION['user_pelanggan'] = $data['2'];
+					header('Location:index.php');
+				}
+				else
+				{
+					echo "<script src='css/sweetalert.min.js'></script>";
+					echo "<script>";
+					echo "swal({
+						  title: 'Oops!',
+						  text: 'Passwordmu Salah!',
+						  icon: 'error',
+						  button: 'Oke!',
+						});";
+					echo "</script>";
+					echo "<script> document.getElementById('username').value = '".$username."';</script>";
+				}
+			}
+			else
+			{
+				if($data['1'] == $password)
+				{
+					//imposible
+					echo "<script src='css/sweetalert.min.js'></script>";
+					echo "<script>";
+					echo "swal({
+						  title: 'Oops!',
+						  text: 'Usernamemu Salah!',
+						  icon: 'error',
+						  button: 'Oke!',
+						});";
+					echo "</script>";
+				}
+				else
+				{
+					echo "<script src='css/sweetalert.min.js'></script>";
+					echo "<script>";
+					echo "swal({
+						  title: 'Oops!',
+						  text: 'Akun Siapa Yang Mau Diakses?',
+						  icon: 'error',
+						  button: 'Oke!',
+						});";
+					echo "</script>";
+
+				}
+			}
+		}
+	}else{
+		echo "<script src='css/sweetalert.min.js'></script>";
+		echo "<script>";
+		echo "swal({
+			title: 'Oops!',
+			text: 'Sepertinya Anda Belum Terdaftar?',
+			icon: 'error',
+			button: 'Oke!',
+			});";
+		echo "</script>";
+	}
+}
+
+ ?>
