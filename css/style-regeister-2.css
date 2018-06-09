@@ -98,14 +98,14 @@ input[type="radio"] + label:last-of-type {
 input[type="radio"] + label i {
   padding-right: 0.4em;
 }
-input[type="radio"]:checked + label,
+/* input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,
 select:active {
   background-color: #1a75ff;
   color: #fff;
   border-color: #1a75ff;
-}
+} */
 input[type="checkbox"] {
   display: none;
 }
@@ -154,8 +154,8 @@ select:active {
   outline: 0;
 }
 select option {
-  background-color: #7ed321;
-  color: #fff;
+  background-color: white;
+  color: #000;
 }
 .input-group {
   margin-bottom: 1em;
@@ -247,3 +247,13 @@ select option {
     padding-right: 0;
   }
 }
+
+.combobox{
+  width: 235px;
+}
+input[type="radio"]:checked + label,
+input:checked + label:before {
+  background-color: #1a75ff;
+  color: #fff;
+  border-color: #1a75ff;
+} 

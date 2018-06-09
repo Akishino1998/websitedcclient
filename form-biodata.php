@@ -5,6 +5,7 @@
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style-regeister-2.css">
     <!-- <link rel="stylesheet" href="css/hover.css"> -->
@@ -35,19 +36,36 @@
                 <input type="text" placeholder="RW" name="rw" />
             </div>
             <div class="col-third">
-                <input type="text" placeholder="Kode Pos" name="kode_pos" />
+                <input type="text" placeholder="Kode Pos" name="kode_pos" id="kodepos" onkeyup="loadData()" />
             </div>
         </div>
         <div class="input-group">
             <div class="col-half">
-                <input type="text" placeholder="Kecamatan" name="kecamatan" />
+                <!-- <input type="text" placeholder="Provinsi" name="provinsi" /> -->
+                <select name="provinsi" id="combobox_prov" class="combobox">
+                  <option value="" selected="selected" id="items" >Pilih Provinsi</option>
+                </select>
             </div>
             <div class="col-half">
-                <input type="text" placeholder="Keluaran" name="kelurahan" />
+                <!-- <input type="text" placeholder="Kabupaten" name="kabupaten" /> -->
+                <select name="kabupaten" id="combobox_kab" class="combobox">
+                  <option value="" selected="selected" id="items">Pilih Kabupaten</option>
+                </select>
             </div>          
         </div>
         <div class="input-group">
-            <input type="text" placeholder="Provinsi" name="provinsi" />
+            <div class="col-half">
+                <!-- <input type="combobox" placeholder="Kecamatan" name="kecamatan" /> -->
+                <select name="kecamatan" id="combobox_kec" class="combobox">
+                  <option value="" selected="selected" id="items">Pilih Kecamatan</option>
+                </select>
+            </div>
+            <div class="col-half">
+                <!-- <input type="text" placeholder="Keluaran" name="kelurahan" /> -->
+                <select name="kelurahan" id="combobox_kel" class="combobox">
+                  <option value="" selected="selected" id="items">Pilih Keluaran</option>
+                </select>
+            </div> 
         </div>
         <div class="input-group input-group-icon">
             <input type="email" placeholder="Email" name="email" />
@@ -99,6 +117,27 @@
     </script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        loadData();
+    });
+
+    function loadData(){
+        var kodepos = document.getElementById('kodepos').value;
+        $.get('SQL/datawilayah_prov.php?id='+kodepos, function(data){
+            $('#combobox_prov').html(data);
+        });
+        $.get('SQL/datawilayah_kab.php?id='+kodepos, function(data){
+            $('#combobox_kab').html(data);
+        });
+        $.get('SQL/datawilayah_kec.php?id='+kodepos, function(data){
+            $('#combobox_kec').html(data);
+        });
+        $.get('SQL/datawilayah_kel.php?id='+kodepos, function(data){
+            $('#combobox_kel').html(data);
+        });
+    }
+</script>
 <?php 
 if(isset($_POST['submit']))
 {
@@ -125,5 +164,10 @@ if(isset($_POST['submit']))
     $provinsi = $_POST['provinsi'];
     $nohp = $_POST['nohp'];
     $email = $_POST['email'];
+    echo $provinsi;
+    //cek database dulu sebelum insert data
+    //dan ingat, user kadang enggak ngisi semuanya
+    //user kadang ngisi seperlunya saja, jadi enggak pasti ngisinya
+    //
 }
 ?>
