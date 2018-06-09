@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Sign Up Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/style-regeister-2.css">
 </head>
@@ -60,7 +61,7 @@
       <div class="col-half">
         <h4>Tanggal Lahir</h4>
         <div class="input-group">
-          <div class="col-third">
+          <!-- <div class="col-third">
             <input type="text" placeholder="Hari" name="hari_lahir" />
           </div>
           <div class="col-third">
@@ -68,7 +69,9 @@
           </div>
           <div class="col-third">
             <input type="text" placeholder="Tahun" name="tahun_lahir" />
-          </div>
+          </div> -->
+          <input type="text" name="tgl_lahir" id="datepicker" />
+          <!-- <input type="text" name="tgl_lahir" id="datepicker2" /> -->
         </div>
       </div>
       <div class="col-half">
@@ -87,13 +90,34 @@
     </div>
   </form>
 </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
+    <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
   <script  src="js/index.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#datepicker').Zebra_DatePicker({
+                direction: ['1999-01-01', false],
+                format: 'l, d F Y',
+                show_icon: false,
+                months: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+                days:['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+            });
+
+            $('#datepicker2').Zebra_DatePicker({
+                
+            });
+
+
+        });
+  </script>
 </body>
 </html>
 <?php 
 if(isset($_POST['submit']))
 {
     echo $_POST['nama_depan']." ".$_POST['nama_belakang'];
+    echo $_POST['tgl_lahir'];
 }
 ?>
