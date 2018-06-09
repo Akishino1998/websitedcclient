@@ -12,5 +12,5 @@ mysqli_query($conn, $sql);
 $sql = "INSERT INTO user_pelanggan VALUES('".$username."','".$password."','PL-".$jumlah_data."')";
 mysqli_query($conn, $sql);
 session_destroy();
-header('Location:beranda/');
+header('Location:form-register-next.php');
 ?>

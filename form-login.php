@@ -1,28 +1,5 @@
 <?php 
 session_start(); 
-if(isset($_POST['username']))
-{
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	include('koneksi.php');
-	$sql = "SELECT * FROM user_pelanggan WHERE username='$username'";
-	$hasil = mysqli_query($conn, $sql);
-	if(mysqli_num_rows($hasil))
-	{
-		while($data=mysqli_fetch_row($hasil))
-		{
-
-			if($data['0'] == $username)
-			{
-				if(password_verify($password, $data['1']))
-				{
-					$_SESSION['user_pelanggan'] = $data['2'];
-					header('Location:beranda/');
-				}
-			}
-		}
-	}
-}
 ?>
 <html>
 <head>
@@ -138,7 +115,7 @@ if(isset($_POST['username']))
 				if(password_verify($password, $data['1']))
 				{
 					$_SESSION['user_pelanggan'] = $data['2'];
-					header('Location:beranda/');
+					echo "<script> self.location='beranda/'</script>";
 				}
 				else
 				{
