@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 *,
 *:before,
 *:after {
@@ -11,7 +12,41 @@ body {
   background-color: #e3e3e3;
 }
 h4 {
-  color: #7ed321;
+  position: relative;
+  top: -40px;
+  color: #1a75ff;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+}
+h5 {
+  color: #1a75ff;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+#submit{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  transition: background-color 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#submit:hover, #submit:focus, #submit:active {
+  color: white;
+  background-color: #1a75ff;
+}
+#submit:hover:before, #submit:focus:before, #submit:active:before {
+  -webkit-transform: scale(1), background, color;
+  transform: scale(1), background, color;
 }
 input,
 input[type="radio"] + label,
@@ -19,6 +54,7 @@ input[type="checkbox"] + label:before,
 select option,
 select {
   width: 100%;
+   font-family: 'Oswald', sans-serif;
   padding: 1em;
   line-height: 1.4;
   background-color: #f9f9f9;
@@ -32,13 +68,13 @@ select {
 }
 input:focus {
   outline: 0;
-  border-color: #64ac15;
+  border-color: #1a75ff;
 }
 input:focus + .input-icon i {
-  color: #7ed321;
+  color: #1a75ff;
 }
 input:focus + .input-icon:after {
-  border-right-color: #7ed321;
+  border-right-color: #1a75ff;
 }
 input[type="radio"] {
   display: none;
@@ -66,9 +102,9 @@ input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,
 select:active {
-  background-color: #7ed321;
+  background-color: #1a75ff;
   color: #fff;
-  border-color: #64ac15;
+  border-color: #1a75ff;
 }
 input[type="checkbox"] {
   display: none;

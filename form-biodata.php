@@ -1,123 +1,129 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>Sign Up Form</title>
+    <meta charset="UTF-8">
+    <title>Sign Up Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/bootstrap/zebra_datepicker.min.css">
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="css/style-regeister-2.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style-regeister-2.css">
+    <!-- <link rel="stylesheet" href="css/hover.css"> -->
 </head>
 <body>  
 <div class="container">
-  <form action="" method="post">
+    <form method="post">
     <div class="row">
-      <h4>Lengkapi Form Berikut Ini, ya :)</h4>
-      <div class="input-group input-group-icon">
-        <div class="col-half">
-            <input type="text" placeholder="Nama Depan" name="nama_depan" />
-            <div class="input-icon"><i class="fa fa-user"></i></div>
-          </div>
-        <div class="col-half">
-            <input type="text" placeholder="Nama Belakang" name="nama_belakang" />
-          </div>          
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="text" placeholder="Alamat (Ex. Jalan Pangeran Suryanata)" name="alamat" />
-        <div class="input-icon"><i class="fa fa-street-view"></i></div>
-      </div>
-       <div class="input-group">
-          <div class="col-third">
-            <input type="text" placeholder="RT" name="rt" />
-          </div>
-          <div class="col-third">
-            <input type="text" placeholder="RW" name="rw" />
-          </div>
-          <div class="col-third">
-            <input type="text" placeholder="Kode Pos" name="kode_pos" />
-          </div>
-      </div>
-      <div class="input-group">
-        <div class="col-half">
-            <input type="text" placeholder="Kecamatan" name="kecamatan" />
-          </div>
-        <div class="col-half">
-            <input type="text" placeholder="Keluaran" name="kelurahan" />
-          </div>          
-      </div>
-      <div class="input-group">
-        <input type="text" placeholder="Provinsi" name="provinsi" />
-      </div>
-  	  <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email" name="email" />
-        <div class="input-icon"><i class="fa fa-envelope"></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="No. Telp" name="nohp" />
-        <div class="input-icon"><i class="fa fa-phone"></i></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-half">
-        <h4>Tanggal Lahir</h4>
-        <div class="input-group">
-          <!-- <div class="col-third">
-            <input type="text" placeholder="Hari" name="hari_lahir" />
-          </div>
-          <div class="col-third">
-            <input type="text" placeholder="Bulan" name="bulan_lahir" />
-          </div>
-          <div class="col-third">
-            <input type="text" placeholder="Tahun" name="tahun_lahir" />
-          </div> -->
-          <input type="text" name="tgl_lahir" id="datepicker" />
-          <!-- <input type="text" name="tgl_lahir" id="datepicker2" /> -->
+        <h4>Biodata Diri</h4>
+        <div class="input-group input-group-icon">
+            <div class="col-half">
+                <input type="text" placeholder="Nama Depan" name="nama_depan" />
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+            </div>
+            <div class="col-half">
+                <input type="text" placeholder="Nama Belakang" name="nama_belakang" />
+            </div>          
         </div>
-      </div>
-      <div class="col-half">
-        <h4>Jenis Kelamin</h4>
-        <div class="input-group">
-          <input type="radio" name="gender" value="laki" id="gender-male"/>
-          <label for="gender-male">Laki-Laki</label>
-          <input type="radio" name="gender" value="perempuan" id="gender-female"/>
-          <label for="gender-female">Perempuan</label>
+        <div class="input-group input-group-icon">
+            <input type="text" placeholder="Alamat (Ex. Jln. P. Suryanata)" name="alamat" />
+            <div class="input-icon"><i class="fa fa-street-view"></i></div>
         </div>
-      </div>
+        <div class="input-group">
+            <div class="col-third">
+                <input type="text" placeholder="RT" name="rt" />
+            </div>
+            <div class="col-third">
+                <input type="text" placeholder="RW" name="rw" />
+            </div>
+            <div class="col-third">
+                <input type="text" placeholder="Kode Pos" name="kode_pos" />
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="col-half">
+                <input type="text" placeholder="Kecamatan" name="kecamatan" />
+            </div>
+            <div class="col-half">
+                <input type="text" placeholder="Keluaran" name="kelurahan" />
+            </div>          
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Provinsi" name="provinsi" />
+        </div>
+        <div class="input-group input-group-icon">
+            <input type="email" placeholder="Email" name="email" />
+            <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+            <input type="email" placeholder="No. Telp" name="nohp" id="nohp" />
+            <div class="input-icon"><i class="fa fa-phone"></i></div>
+        </div>
     </div>
     <div class="row">
-		<input type="submit" name="submit" value="Simpan!"/>
-	  </div>
+        <div class="col-half">
+            <h5>Tanggal Lahir</h5>
+            <div class="input-group">
+                <input type="text" name="tgl_lahir" id="datepicker" placeholder="Tanggal Lahir" />
+            </div>
+        </div>
+        <div class="col-half">
+            <h5>Jenis Kelamin</h5>
+            <div class="input-group">
+            <input type="radio" name="gender" value="laki" id="gender-male"/>
+            <label for="gender-male">Laki-Laki</label>
+            <input type="radio" name="gender" value="perempuan" id="gender-female"/>
+            <label for="gender-female">Perempuan</label>
+            </div>
+        </div>
     </div>
+    <div class="row">
+		<input type="submit" name="submit" value="Simpan!" id="submit" class="hvr-rectangle-in" />
+	</div>
   </form>
 </div>
-    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
     <script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
-  <script  src="js/index.js"></script>
+    <script  src="js/index.js"></script>
     <script>
         $(document).ready(function() {
             $('#datepicker').Zebra_DatePicker({
-                direction: ['1999-01-01', false],
+                direction: ['1998-01-01', true],
                 format: 'l, d F Y',
-                show_icon: false,
                 months: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
                 days:['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+                offset:[-300,10],
+                show_select_today: false,
+                lang_clear_date: "Hapus",
             });
-
-            $('#datepicker2').Zebra_DatePicker({
-                
-            });
-
-
         });
-  </script>
+    </script>
 </body>
 </html>
 <?php 
 if(isset($_POST['submit']))
 {
+    //Dapatkan Tanggal Lahir
+    $bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
     echo $_POST['nama_depan']." ".$_POST['nama_belakang'];
-    echo $_POST['tgl_lahir'];
+    $tgl = explode(" ",$_POST['tgl_lahir']);
+    $getBulan = 0;
+    //getBulan
+    for ($i=0; $i < count($bulan); $i++) { 
+        if ($tgl[2] == $bulan[$i]) {
+            $getBulan = $i+1;
+        }
+    }
+    $tgl_lahir = $tgl[3]."-0".$getBulan."-".$tgl[1];
+
+    $nama_depan = $_POST['nama_depan'];
+    $nama_belakang = $_POST['nama_belakang'];
+    $gender = $_POST['gender'];
+    $kode_pos = $_POST['kode_pos'];
+    $alamat = $_POST['alamat'];
+    $kecamatan = $_POST['kecamatan'];
+    $kelurahan = $_POST['kelurahan'];
+    $provinsi = $_POST['provinsi'];
+    $nohp = $_POST['nohp'];
+    $email = $_POST['email'];
 }
 ?>
