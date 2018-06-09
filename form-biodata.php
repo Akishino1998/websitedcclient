@@ -13,12 +13,13 @@
     <div class="row">
       <h4>Lengkapi Form Berikut Ini, ya :)</h4>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Nama Depan" name="nama_depan" />
-        <div class="input-icon"><i class="fa fa-user"></i></div>
-      </div>
-  	  <div class="input-group input-group-icon">
-          <input type="text" placeholder="Nama Belakang" name="nama_belakang" />
-          <div class="input-icon"><i class="fa fa-user"></i></div>
+        <div class="col-half">
+            <input type="text" placeholder="Nama Depan" name="nama_depan" />
+            <div class="input-icon"><i class="fa fa-user"></i></div>
+          </div>
+        <div class="col-half">
+            <input type="text" placeholder="Nama Belakang" name="nama_belakang" />
+          </div>          
       </div>
       <div class="input-group input-group-icon">
         <input type="text" placeholder="Alamat (Ex. Jalan Pangeran Suryanata)" name="alamat" />
@@ -73,10 +74,10 @@
       <div class="col-half">
         <h4>Jenis Kelamin</h4>
         <div class="input-group">
-          <input type="radio" name="gender" value="male" id="gender-male"/>
-          <label for="gender-male">Male</label>
-          <input type="radio" name="gender" value="female" id="gender-female"/>
-          <label for="gender-female">Female</label>
+          <input type="radio" name="gender" value="laki" id="gender-male"/>
+          <label for="gender-male">Laki-Laki</label>
+          <input type="radio" name="gender" value="perempuan" id="gender-female"/>
+          <label for="gender-female">Perempuan</label>
         </div>
       </div>
     </div>
@@ -89,5 +90,10 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="js/index.js"></script>
 </body>
-
 </html>
+<?php 
+if(isset($_POST['submit']))
+{
+    echo $_POST['nama_depan']." ".$_POST['nama_belakang'];
+}
+?>

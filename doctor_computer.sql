@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2018 at 07:47 AM
+-- Generation Time: Jun 09, 2018 at 12:04 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -25,23 +25,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun`
+-- Table structure for table `akun_staff`
 --
 
-CREATE TABLE `akun` (
+CREATE TABLE `akun_staff` (
   `username` varchar(30) NOT NULL,
-  `password` varchar(30) DEFAULT NULL,
+  `password` text,
   `id_Anggota` varchar(10) DEFAULT NULL,
-  `level` enum('Admin','Sales') DEFAULT 'Sales'
+  `level` enum('Master','Admin','Sales') DEFAULT 'Sales'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `akun`
+-- Dumping data for table `akun_staff`
 --
 
-INSERT INTO `akun` (`username`, `password`, `id_Anggota`, `level`) VALUES
-('a', 'a', '0010', NULL),
-('login', 'login', '0001', 'Admin');
+INSERT INTO `akun_staff` (`username`, `password`, `id_Anggota`, `level`) VALUES
+('a', '$2y$10$XQH4CnM7frNHioy118wkfODNfeh2l7Y6mclx/OaNiQ0R1kM07lt16', '0010', 'Master'),
+('login', '$2y$10$zFjXiIZ2N7S7KD4rk5KzrOVdCRzRBv4cRFTn4VylO4cAoV2gIY2rC', '0001', 'Master');
 
 -- --------------------------------------------------------
 
@@ -55,24 +55,25 @@ CREATE TABLE `anggota` (
   `Jabatan` varchar(30) NOT NULL,
   `NO_HP` varchar(14) DEFAULT NULL,
   `Email` varchar(30) NOT NULL,
-  `Alamat` text
+  `Alamat` text,
+  `foto` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `anggota`
 --
 
-INSERT INTO `anggota` (`id_Anggota`, `Nama`, `Jabatan`, `NO_HP`, `Email`, `Alamat`) VALUES
-('0001', 'Eko Pujianto', 'CEO', '+6285828949395', 'ekopujianto48@gmail.com', 'JL. P. Suryanata Graha Indah RT. 57 No. 83'),
-('0002', 'Riza Al-Muttaqin', '', '+6285654276002', '', NULL),
-('0003', 'Muhammad Egi Noviandra', '', '+6282158443299', 'egirajasa@gmail.com', 'JL. Graha Indah Perum Bukit Permata Indah'),
-('0004', 'Rizky Alim Nurhuda', '', '+6282255282939', '', 'JL. Markisa No. 38'),
-('0005', 'Markarius Paso', '', '+6285393965796', '', 'JL. Nahkoda RT. 15 Bukuan'),
-('0006', 'Muhammad Ri\'fai', '', '+6282254562450', 'muhammadrifai811@gmail.com', 'JL. Pepaya RT. 01'),
-('0007', 'Andi', 'Bendahara', '085312329271', 'andidian@gmail.com', 'JL.SAID'),
-('0008', 'Hendra', 'OAUHULNH', '0818261293', 'hendra@gmail.com', 'DIJALAN'),
-('0009', 'Eko', 'CEOCEO', '088888888888', 'eko@gmail.com', 'kawdokaowd'),
-('0010', 'Eko', 'Eko', '089999999', 'eko@gmail.com', 'eko');
+INSERT INTO `anggota` (`id_Anggota`, `Nama`, `Jabatan`, `NO_HP`, `Email`, `Alamat`, `foto`) VALUES
+('0001', 'Eko Pujianto', 'CEO', '+6285828949395', 'ekopujianto48@gmail.com', 'JL. P. Suryanata Graha Indah RT. 57 No. 83', 'assets/img/staff/eko.png'),
+('0002', 'Riza Al-Muttaqin', '', '+6285654276002', '', NULL, NULL),
+('0003', 'Muhammad Egi Noviandra', '', '+6282158443299', 'egirajasa@gmail.com', 'JL. Graha Indah Perum Bukit Permata Indah', NULL),
+('0004', 'Rizky Alim Nurhuda', '', '+6282255282939', '', 'JL. Markisa No. 38', NULL),
+('0005', 'Markarius Paso', '', '+6285393965796', '', 'JL. Nahkoda RT. 15 Bukuan', NULL),
+('0006', 'Muhammad Ri\'fai', '', '+6282254562450', 'muhammadrifai811@gmail.com', 'JL. Pepaya RT. 01', NULL),
+('0007', 'Andi', 'Bendahara', '085312329271', 'andidian@gmail.com', 'JL.SAID', NULL),
+('0008', 'Hendra', 'OAUHULNH', '0818261293', 'hendra@gmail.com', 'DIJALAN', NULL),
+('0009', 'Eko', 'CEOCEO', '088888888888', 'eko@gmail.com', 'kawdokaowd', NULL),
+('0010', 'Eko', 'Eko', '089999999', 'eko@gmail.com', 'eko', NULL);
 
 -- --------------------------------------------------------
 
@@ -151,11 +152,14 @@ INSERT INTO `daftar_harga_service` (`id_Service`, `Nama_Service`, `Harga_Service
 
 CREATE TABLE `daftar_pelanggan` (
   `id_Pelanggan` varchar(10) NOT NULL,
-  `username` varchar(50) DEFAULT NULL,
   `Nama_Depan` varchar(30) DEFAULT ' ',
   `Nama_Belakang` varchar(30) DEFAULT ' ',
+  `gender` varchar(30) DEFAULT ' ',
   `kode_pos` int(11) DEFAULT NULL,
   `Alamat` text,
+  `Kecamatan` text,
+  `Kelurahan` text,
+  `Provinsi` text,
   `NO_HP` varchar(14) DEFAULT NULL,
   `Email` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -164,10 +168,14 @@ CREATE TABLE `daftar_pelanggan` (
 -- Dumping data for table `daftar_pelanggan`
 --
 
-INSERT INTO `daftar_pelanggan` (`id_Pelanggan`, `username`, `Nama_Depan`, `Nama_Belakang`, `kode_pos`, `Alamat`, `NO_HP`, `Email`) VALUES
-('0', NULL, 'Unknow', NULL, NULL, 'Unknow', 'Unknow', 'Unknow'),
-('0001', NULL, 'Eko', '', NULL, 'Suryanata', '085828949395', 'ekopujianto48@gmail.'),
-('0002', NULL, 'Indah', ' ', NULL, 'Hatiku', '085787127035', 'indah@gmail.com');
+INSERT INTO `daftar_pelanggan` (`id_Pelanggan`, `Nama_Depan`, `Nama_Belakang`, `gender`, `kode_pos`, `Alamat`, `Kecamatan`, `Kelurahan`, `Provinsi`, `NO_HP`, `Email`) VALUES
+('PL-1', 'Nur', 'Aisyah', ' ', 75124, 'Jln. P. Suryanata', NULL, NULL, NULL, '085858585858', 'nuraisyah@gmail.com'),
+('PL-2', 'Iin', 'Ferolita', ' ', 75124, 'Jln. P. Suryanata', NULL, NULL, NULL, '085858585812', 'iin@gmail.com'),
+('PL-3', ' ', ' ', ' ', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('PL-4', ' ', ' ', ' ', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('PL-5', ' ', ' ', ' ', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('PL-6', ' ', ' ', ' ', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('PL-7', ' ', ' ', ' ', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -185,15 +193,6 @@ CREATE TABLE `daftar_penerimaan_pc` (
   `Tanggal_Terima` datetime DEFAULT NULL,
   `id_Penerima_Staff` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `daftar_penerimaan_pc`
---
-
-INSERT INTO `daftar_penerimaan_pc` (`id_Penerimaan`, `id_Pelanggan`, `Merk_PC`, `Seri_PC`, `Kelengkapan`, `Keluhan`, `Tanggal_Terima`, `id_Penerima_Staff`) VALUES
-('1', '0001', 'Axioo', 'wad', 'awd', 'qawd', '2018-04-13 13:39:06', '0009'),
-('2', '0002', 'Acer', '900', 'Batrai', 'Instal Ulang', '2018-05-27 12:58:41', '0007'),
-('3', '0002', 'Acer', '90000', 'dawd', 'awdawd', '2018-05-27 13:05:04', '0001');
 
 --
 -- Triggers `daftar_penerimaan_pc`
@@ -257,6 +256,16 @@ INSERT INTO `daftar_supplier` (`id_Supplier`, `nama_supplier`, `Alamat_supplier`
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `daftar_tukang`
+-- (See below for the actual view)
+--
+CREATE TABLE `daftar_tukang` (
+`Teknisi` varchar(30)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `delivery_jasa`
 --
 
@@ -266,17 +275,9 @@ CREATE TABLE `delivery_jasa` (
   `Tanggal` date DEFAULT NULL,
   `Keterangan` text,
   `Status` enum('Belum','Selesai','Cancel') DEFAULT 'Belum',
-  `kurir` varchar(50) DEFAULT 'Belum Tersedia'
+  `kurir` varchar(50) DEFAULT 'Belum Tersedia',
+  `Alasan_Cancel` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `delivery_jasa`
---
-
-INSERT INTO `delivery_jasa` (`id_delivery_jasa`, `id_pelanggan`, `Tanggal`, `Keterangan`, `Status`, `kurir`) VALUES
-('0001', '0002', '2018-04-13', 'AAA', 'Selesai', NULL),
-('0002', '0001', '2018-05-18', 'AA', 'Selesai', NULL),
-('0003', '0001', '2018-06-07', 'daw', 'Belum', 'Belum Tersedia');
 
 -- --------------------------------------------------------
 
@@ -781,21 +782,16 @@ CREATE TABLE `pendapatan_jasa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendapatan_jasa`
---
-
-INSERT INTO `pendapatan_jasa` (`id_Pendapatan`, `id_Penerimaan`, `Tanggal`, `Nama_Teknisi`, `Total`, `Id_delivery`) VALUES
-('1', '1', '2018-06-07 13:47:25', '0010', 0, '0002');
-
---
 -- Triggers `pendapatan_jasa`
 --
 DELIMITER $$
 CREATE TRIGGER `pendapatan_jasa_after_insert` AFTER INSERT ON `pendapatan_jasa` FOR EACH ROW BEGIN
-UPDATE status_pengembalian_pc
+UPDATE status_pengembalian_pc, anggota
 SET status_pengembalian_pc.Status_pengembalian = 'Sudah',
-status_pengembalian_pc.teknisi = NEW.Nama_Teknisi
-WHERE NEW.id_Penerimaan = status_pengembalian_pc.id_penerimaan;
+status_pengembalian_pc.teknisi = anggota.Nama,
+status_pengembalian_pc.Tgl_Pengembalian = NEW.Tanggal
+WHERE NEW.id_Penerimaan = status_pengembalian_pc.id_penerimaan
+AND NEW.Nama_Teknisi = anggota.id_Anggota;
 END
 $$
 DELIMITER ;
@@ -846,15 +842,6 @@ CREATE TABLE `status_pengembalian_pc` (
   `teknisi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `status_pengembalian_pc`
---
-
-INSERT INTO `status_pengembalian_pc` (`id_penerimaan`, `id_Pelanggan`, `Tgl_Terima`, `Tgl_Pengembalian`, `Status_pengembalian`, `teknisi`) VALUES
-('1', '0001', '2018-04-13 13:39:06', NULL, 'Sudah', '0010'),
-('2', '0002', '2018-05-27 12:58:41', NULL, 'Belum', 'Belum'),
-('3', '0002', '2018-05-27 13:05:04', NULL, 'Belum', 'Belum');
-
 -- --------------------------------------------------------
 
 --
@@ -863,8 +850,31 @@ INSERT INTO `status_pengembalian_pc` (`id_penerimaan`, `id_Pelanggan`, `Tgl_Teri
 
 CREATE TABLE `user_pelanggan` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) DEFAULT NULL
+  `password` text,
+  `id_Pelanggan` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_pelanggan`
+--
+
+INSERT INTO `user_pelanggan` (`username`, `password`, `id_Pelanggan`) VALUES
+('aw', '$2y$10$4PIvMIL5clieQd55UWpHA.xhNAnvvH4vp617uF4L.ux0bOQmdHEIK', 'PL-3'),
+('awd', '$2y$10$nZq.RckKSSthsgkS27StdOQDF5vMPikEhjRf62wfz4h62joHGxkPK', 'PL-5'),
+('eko', '$2y$10$AXMq19FITvRt/ZO7Hx2HGeGWqcPU0gn.4AiqUpRNc9CPfVKf5ZtJW', 'PL-6'),
+('iin', '$2y$10$yWRg7GqUuztnhj1X9AcTgeBcrXVkgjIhelSVTj3WMaEoT5Puj4UK6', 'PL-2'),
+('indah', '$2y$10$cx22V.8PT7gccDwzSl5fzu30oeBl6v06V4TcNg/8XDX5AdpZv2ptS', 'PL-4'),
+('mos', '$2y$10$ptDUOExm0iBc0hzAZzPhkeYg.zZtYBVCVj8f3n8vfaGCzxbX.cMdu', 'PL-7'),
+('nur', '$2y$10$Rc7xVv8xFhIk3snf0wZUUuCDQSD8mfFzqBnaKmfvp6H0TmvwlnN/y', 'PL-1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `daftar_tukang`
+--
+DROP TABLE IF EXISTS `daftar_tukang`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `daftar_tukang`  AS  select `anggota`.`Nama` AS `Teknisi` from (`anggota` join `status_pengembalian_pc`) where (`status_pengembalian_pc`.`teknisi` = `anggota`.`id_Anggota`) ;
 
 -- --------------------------------------------------------
 
@@ -880,9 +890,9 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indexes for table `akun`
+-- Indexes for table `akun_staff`
 --
-ALTER TABLE `akun`
+ALTER TABLE `akun_staff`
   ADD PRIMARY KEY (`username`),
   ADD KEY `FK_akun_anggota` (`id_Anggota`);
 
@@ -915,8 +925,7 @@ ALTER TABLE `daftar_harga_service`
 -- Indexes for table `daftar_pelanggan`
 --
 ALTER TABLE `daftar_pelanggan`
-  ADD PRIMARY KEY (`id_Pelanggan`),
-  ADD KEY `FK_daftar_pelanggan_user_pelanggan` (`username`);
+  ADD PRIMARY KEY (`id_Pelanggan`);
 
 --
 -- Indexes for table `daftar_penerimaan_pc`
@@ -944,8 +953,7 @@ ALTER TABLE `daftar_supplier`
 --
 ALTER TABLE `delivery_jasa`
   ADD PRIMARY KEY (`id_delivery_jasa`),
-  ADD KEY `FK_pemesanan_jasabarang_daftar_pelanggan` (`id_pelanggan`),
-  ADD KEY `FK_delivery_jasa_anggota` (`kurir`);
+  ADD KEY `FK_pemesanan_jasabarang_daftar_pelanggan` (`id_pelanggan`);
 
 --
 -- Indexes for table `detail_pembelian_barang`
@@ -1073,7 +1081,8 @@ ALTER TABLE `status_pengembalian_pc`
 -- Indexes for table `user_pelanggan`
 --
 ALTER TABLE `user_pelanggan`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`),
+  ADD KEY `FK_user_pelanggan_daftar_pelanggan` (`id_Pelanggan`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1114,9 +1123,9 @@ ALTER TABLE `pembagian_gaji`
 --
 
 --
--- Constraints for table `akun`
+-- Constraints for table `akun_staff`
 --
-ALTER TABLE `akun`
+ALTER TABLE `akun_staff`
   ADD CONSTRAINT `FK_akun_anggota` FOREIGN KEY (`id_Anggota`) REFERENCES `anggota` (`id_Anggota`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -1124,12 +1133,6 @@ ALTER TABLE `akun`
 --
 ALTER TABLE `barang`
   ADD CONSTRAINT `FK_barang_kategori_barang` FOREIGN KEY (`id_Kategori`) REFERENCES `kategori_barang` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `daftar_pelanggan`
---
-ALTER TABLE `daftar_pelanggan`
-  ADD CONSTRAINT `FK_daftar_pelanggan_user_pelanggan` FOREIGN KEY (`username`) REFERENCES `user_pelanggan` (`username`);
 
 --
 -- Constraints for table `daftar_penerimaan_pc`
@@ -1251,6 +1254,12 @@ ALTER TABLE `penjualan_barang`
 ALTER TABLE `status_pengembalian_pc`
   ADD CONSTRAINT `FK_status_pengembalian_pc_daftar_pelanggan` FOREIGN KEY (`id_Pelanggan`) REFERENCES `daftar_pelanggan` (`id_Pelanggan`),
   ADD CONSTRAINT `FK_status_pengembalian_pc_daftar_penerimaan_pc` FOREIGN KEY (`id_penerimaan`) REFERENCES `daftar_penerimaan_pc` (`id_Penerimaan`);
+
+--
+-- Constraints for table `user_pelanggan`
+--
+ALTER TABLE `user_pelanggan`
+  ADD CONSTRAINT `FK_user_pelanggan_daftar_pelanggan` FOREIGN KEY (`id_Pelanggan`) REFERENCES `daftar_pelanggan` (`id_Pelanggan`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
