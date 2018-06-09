@@ -45,7 +45,6 @@ if(isset($_POST['user']))
 				{
 					if($data['3']=='Master')
 					{
-						
 						$_SESSION['type_user'] = 'Master';
 						$_SESSION['user'] = $data['2'];
 						echo $_SESSION['user'];
