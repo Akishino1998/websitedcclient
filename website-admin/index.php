@@ -142,6 +142,52 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-md-12">
+                        <!--    Hover Rows  -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Daftar Inventaris Doctor Computer</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th ><center>#</center></th>
+                                                <th ><center>Nama Barang</center></th>
+                                                <th ><center>No. Seri</center></th>
+                                                <th  ><center>Merk</center></th>
+                                                <th><center>Jumlah Barang</center></th>
+                                                <th><center>Harga Beli</center></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
+                                            include('koneksi-admin.php');
+                                            $sql = "SELECT * FROM inventaris";
+                                            $hasil = mysqli_query($conn, $sql);
+                                            while ($data=mysqli_fetch_row($hasil)) { 
+                                            ?>
+                                            <tr>
+                                                <td align="center"><?php echo $data['0']; ?></td>
+                                                <td><?php echo $data['1']; ?></td>
+                                                <td align="center"><?php echo $data['2']; ?></td>
+                                                <td align="center"><?php echo $data['3']; ?></td>
+                                                <td align="center"><?php echo $data['4']; ?></td>
+                                                <td align="center">Rp. <?php echo $data['5'];  ?></td>
+                                            </tr>
+                                            <?php 
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End  Hover Rows  -->
+                    </div>
+                </div>
+                <div class="row">
                     <div class=" col-md-4 col-sm-4">
                         <div class="alert  alert-info">
                             <div class="current-notices">

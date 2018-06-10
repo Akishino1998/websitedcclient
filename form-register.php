@@ -205,46 +205,70 @@ session_start();
 <?php
 if (isset($_POST['username']) && $_POST['username']!= "")
 {
-	if(isset($_POST['pass']) && $_POST['pass']!= "")
+	$tmp = $_POST['username'];
+	$bool = false;
+	for ($i=0; $i < strlen($tmp); $i++) { 
+		if($tmp[$i] == " "){
+			$bool = true;
+		}
+	}
+	if($bool == false)
 	{
-		if(isset($_POST['pass2']) && $_POST['pass2']!= "")
+		if(isset($_POST['pass']) && $_POST['pass']!= "")
 		{
-			if(isset($_POST['setuju']) && $_POST['setuju'] != "")
+			if(isset($_POST['pass2']) && $_POST['pass2']!= "")
 			{
-				echo "awdawdawd";
-				if($_POST['pass'] == $_POST['pass2'])
+				if(isset($_POST['setuju']) && $_POST['setuju'] != "")
 				{
-					include('koneksi.php');
-					$sql = "SELECT * FROM user_pelanggan WHERE username='".$_POST['username']."'";
-					$hasil = mysqli_query($conn, $sql);
-					if(mysqli_num_rows($hasil))
+					echo "awdawdawd";
+					if($_POST['pass'] == $_POST['pass2'])
+					{
+						include('koneksi.php');
+						$sql = "SELECT * FROM user_pelanggan WHERE username='".$_POST['username']."'";
+						$hasil = mysqli_query($conn, $sql);
+						if(mysqli_num_rows($hasil))
+						{
+							echo "<script src='css/sweetalert.min.js'></script>";
+							echo "<script>";
+							echo "swal({
+								title: 'Oops!',
+						  		text: 'Usernamenya sudah dipake orang lain, kak :( Bikin baru ya, kak!',
+						  		icon: 'info',
+						  		button: 'Siap!',
+							});";
+							echo "</script>";
+						}
+						else
+						{
+
+							$password = password_hash($password_asli, PASSWORD_DEFAULT);
+							$_SESSION['username_pelanggan'] = $_POST['username'];
+							$_SESSION['password_pelanggan'] = $password;
+							echo "<script> self.location='form-register-proses.php'</script>";
+						}
+					}
+					else
 					{
 						echo "<script src='css/sweetalert.min.js'></script>";
 						echo "<script>";
 						echo "swal({
-							title: 'Oops!',
-					  		text: 'Usernamenya sudah dipake orang lain, kak :( Bikin baru ya, kak!',
-					  		icon: 'info',
-					  		button: 'Siap!',
-						});";
+							  title: 'Oops!',
+							  text: 'Passwordnya gak sama, kak!',
+							  icon: 'info',
+							  button: 'Oke!',
+							});";
 						echo "</script>";
-					}
-					else
-					{
-
-						$password = password_hash($password_asli, PASSWORD_DEFAULT);
-						$_SESSION['username_pelanggan'] = $_POST['username'];
-						$_SESSION['password_pelanggan'] = $password;
-						echo "<script> self.location='form-register-proses.php'</script>";
+						echo "<script> document.getElementById('username').value = '".$_POST['username']."';</script>";
 					}
 				}
 				else
 				{
+					echo "belum";
 					echo "<script src='css/sweetalert.min.js'></script>";
 					echo "<script>";
 					echo "swal({
 						  title: 'Oops!',
-						  text: 'Passwordnya gak sama, kak!',
+						  text: 'Belum Dicentang, kak! Soalnya harus taat aturan disini hehe :D',
 						  icon: 'info',
 						  button: 'Oke!',
 						});";
@@ -254,12 +278,11 @@ if (isset($_POST['username']) && $_POST['username']!= "")
 			}
 			else
 			{
-				echo "belum";
 				echo "<script src='css/sweetalert.min.js'></script>";
 				echo "<script>";
 				echo "swal({
 					  title: 'Oops!',
-					  text: 'Belum Dicentang, kak! Soalnya harus taat aturan disini hehe :D',
+					  text: 'Ulangi Passwordnya ketinggalan, kak!',
 					  icon: 'info',
 					  button: 'Oke!',
 					});";
@@ -269,46 +292,45 @@ if (isset($_POST['username']) && $_POST['username']!= "")
 		}
 		else
 		{
-			echo "<script src='css/sweetalert.min.js'></script>";
-			echo "<script>";
-			echo "swal({
-				  title: 'Oops!',
-				  text: 'Ulangi Passwordnya ketinggalan, kak!',
-				  icon: 'info',
-				  button: 'Oke!',
-				});";
-			echo "</script>";
-			echo "<script> document.getElementById('username').value = '".$_POST['username']."';</script>";
+			if(isset($_POST['pass2']) && $_POST['pass2']!= "")
+			{
+				echo "<script src='css/sweetalert.min.js'></script>";
+				echo "<script>";
+				echo "swal({
+					  title: 'Oops!',
+					  text: 'Passwordnya Ketinggalan, kak!',
+					  icon: 'info',
+					  button: 'Oke!',
+					});";
+				echo "</script>";
+				echo "<script> document.getElementById('username').value = '".$_POST['username']."';</script>";
+			}
+			else
+			{
+				echo "<script src='css/sweetalert.min.js'></script>";
+				echo "<script>";
+				echo "swal({
+					  title: 'Oops!',
+					  text: 'Password dan Ulangi Passwordnya Ketinggalan, kak!',
+					  icon: 'info',
+					  button: 'Oke!',
+					});";
+				echo "</script>";
+				echo "<script> document.getElementById('username').value = '".$_POST['username']."';</script>";
+			}
 		}
 	}
 	else
 	{
-		if(isset($_POST['pass2']) && $_POST['pass2']!= "")
-		{
-			echo "<script src='css/sweetalert.min.js'></script>";
-			echo "<script>";
-			echo "swal({
-				  title: 'Oops!',
-				  text: 'Passwordnya Ketinggalan, kak!',
-				  icon: 'info',
-				  button: 'Oke!',
-				});";
-			echo "</script>";
-			echo "<script> document.getElementById('username').value = '".$_POST['username']."';</script>";
-		}
-		else
-		{
-			echo "<script src='css/sweetalert.min.js'></script>";
-			echo "<script>";
-			echo "swal({
-				  title: 'Oops!',
-				  text: 'Password dan Ulangi Passwordnya Ketinggalan, kak!',
-				  icon: 'info',
-				  button: 'Oke!',
-				});";
-			echo "</script>";
-			echo "<script> document.getElementById('username').value = '".$_POST['username']."';</script>";
-		}
+		echo "<script src='css/sweetalert.min.js'></script>";
+		echo "<script>";
+		echo "swal({
+			title: 'Oops!',
+			text: 'Username enggak boleh pake spasi kak!',
+			icon: 'info',
+			button: 'Oke!',
+			});";
+		echo "</script>";
 	}
 }
 else
